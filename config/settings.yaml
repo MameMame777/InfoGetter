@@ -1,0 +1,58 @@
+data_sources:
+  xilinx:
+    name: "xilinx"
+    type: "web_scraping"
+    strategy: "selenium"
+    base_url: "https://docs.amd.com/search/all"
+    rate_limit: 2
+    max_results: 200  # 取得する最大件数
+    scroll_pages: 10   # スクロールするページ数
+    load_more_attempts: 5  # 「もっと見る」ボタンのクリック試行回数
+    scroll_delay: 2   # スクロール後の待機時間（秒）
+    page_load_timeout: 30  # ページ読み込みタイムアウト（秒）
+    element_wait_timeout: 10  # 要素待機タイムアウト（秒）
+    search_params:
+      query: "DSP"  # URLの query= パラメータと一致
+      document_types: ["Data Sheet", "User Guides & Manuals"]
+      product_types: ["IP Cores (Adaptive SoC & FPGA)"]
+      date_filter: "last_month"
+      content_lang: "en-US"
+  
+  altera:
+    name: "altera"
+    type: "web_scraping"
+    strategy: "selenium"
+    base_url: "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html"
+    rate_limit: 2
+    max_results: 200  # 取得する最大件数
+    scroll_pages: 10   # スクロールするページ数
+    load_more_attempts: 5  # 「もっと見る」ボタンのクリック試行回数
+    scroll_delay: 2   # スクロール後の待機時間（秒）
+    page_load_timeout: 30  # ページ読み込みタイムアウト（秒）
+    element_wait_timeout: 10  # 要素待機タイムアウト（秒）
+    search_params:
+      query: "DSP"  # URLの q= パラメータと一致
+      sort: "Relevancy"
+
+# 通知設定
+notifications:
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    sender_email: "your_email@gmail.com"
+    sender_password: "your_password"  # 環境変数から取得することを推奨
+    recipients:
+      - "recipient@example.com"
+  
+# 出力設定
+output:
+  json_file: "results/fpga_documents.json"
+  create_backup: true
+  
+# ログ設定
+logging:
+  level: "INFO"
+  file: "logs/scraper.log"
+  max_size: "10MB"
+  backup_count: 5
