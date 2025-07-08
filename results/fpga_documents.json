@@ -1,39 +1,363 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-08T22:35:56.233946",
+    "timestamp": "2025-07-09T00:10:55.710919",
     "total_sources": 2,
-    "total_documents": 135
+    "total_documents": 288
   },
   "sources": {
     "xilinx": {
-      "document_count": 16,
+      "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
+      "document_count": 170,
       "documents": [
-        {
-          "name": "包括的な用語",
-          "url": "https://docs.xilinx.com/v/u/RRu2g9H~sjyCD5c9xbmH~A",
-          "source": "xilinx",
-          "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
-          "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
-          "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:32.295795",
-          "hash": "60a3bb10a2524c034b62d54b39eec62716cb41071340d747c58903d06d75bcf0",
-          "api_metadata": null
-        },
         {
           "name": "System Generator for DSP",
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/System-Generator-for-DSP",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:32.295795",
-          "hash": "4758e9b8357344f2f275eadb3cba50ddf517e955170c1b72f0d33d9f3208243c",
+          "api_metadata": null
+        },
+        {
+          "name": "Detailed Implementation Tab",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Detailed-Implementation-Tab",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Detailed Implementation Tab",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Detailed-Implementation-Tab",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Resource Implications of Rounding",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Resource-Implications-of-Rounding",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Data and Coefficient Bit Width",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Data-and-Coefficient-Bit-Width",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Parallel Datapaths",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Parallel-Datapaths",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Multiple Column Filter Implementation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Multiple-Column-Filter-Implementation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Resource Considerations",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Resource-Considerations",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "FIR Compiler LogiCORE IP Product Guide ( PG149)",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "IP Core",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Multichannel implementation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Multichannel-implementation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Fast Fourier Transform LogiCORE IP Product Guide (PG109)",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "IP Core",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Notable Limitations",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Notable-Limitations",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Output Rounding Selection",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Output-Rounding-Selection",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "IP Facts",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/IP-Facts",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Systolic Multiply-Accumulate",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Systolic-Multiply-Accumulate",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Transpose Multiply-Accumulate",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Transpose-Multiply-Accumulate",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Implementation Details Tab",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Implementation-Details-Tab",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Information Tabs",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Information-Tabs",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "AMD, Inc",
+          "url": "https://www.amd.com/ja",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Multiple Channel versus Parallel Datapaths",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Multiple-Channel-versus-Parallel-Datapaths",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Non-symmetric Rounding to Positive",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Non-symmetric-Rounding-to-Positive",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Polyphase Interpolator",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Polyphase-Interpolator",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "References",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/References",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Reference",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Floating-Point Considerations",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Floating-Point-Considerations",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Reload Order File",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Reload-Order-File",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Revision History",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Revision-History",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Advanced",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Advanced",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Functions",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Functions",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Performance",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Performance",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Overview",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Overview",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Banking",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Banking",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Example",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Example",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TREADY",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TREADY",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Introduction",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Introduction",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Latency",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Latency",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Basic",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Basic",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Throughput",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Throughput",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Compiling",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Compiling",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TDATA",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TDATA",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -41,13 +365,26 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Interface",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:39.023764",
-          "hash": "4e421ed44e042fb85a5c69f82deb584a7409edca866d5a00d042446f3e11513e",
+          "api_metadata": null
+        },
+        {
+          "name": "TLAST",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TLAST",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Implementation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Implementation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -55,13 +392,125 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Clocking",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:39.023764",
-          "hash": "3d9e8e208b63732c378d31cae86c08e4607ad0bbe3cfd365e072a1f06d6b20cf",
+          "api_metadata": null
+        },
+        {
+          "name": "Simulation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Simulation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Upgrading",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Upgrading",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Truncation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Truncation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Linking",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Linking",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Documentation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Documentation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Windows",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Windows",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Installation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Installation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Debugging",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Debugging",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Parameters",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Parameters",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Features",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Features",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Resets",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Resets",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Overview",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Overview",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Linux",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Linux",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -69,13 +518,161 @@
           "url": "https://docs.amd.com/r/en-US/pg109-xfft/Clocking",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:42.458022",
-          "hash": "a5e17447cf259ccc7434c05ad3b6aa95bbfdce7ff1a38bf4fbd4abfe817f90d9",
+          "api_metadata": null
+        },
+        {
+          "name": "Documentation",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Documentation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Introduction",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Introduction",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Constants",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Constants",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Structures",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Structures",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Overflow",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Overflow",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Resets",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Resets",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Features",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Features",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Ports",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Ports",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Banking",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Banking",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Upgrading",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Upgrading",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Simulation",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Simulation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Debugging",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Debugging",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Functionality Changes",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Functionality-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Parameter Changes",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Parameter-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Core Features",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Core-Features",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Product Specification",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Product-Specification",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Specification",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Transceiver Placement",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Transceiver-Placement",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -83,13 +680,8 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Clock-Placement",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:45.957746",
-          "hash": "9ae34f69d747cb9035a6bd749d6e11ab0d2d4c20549d31c53b4686931bed473b",
           "api_metadata": null
         },
         {
@@ -97,13 +689,8 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Clock-Management",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:45.957746",
-          "hash": "38c88c9e6e4a9d67c3cba0209a018af784c716710d0399ac516ad41e49a0f325",
           "api_metadata": null
         },
         {
@@ -111,13 +698,17 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Clock-Frequencies",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:45.957746",
-          "hash": "296cc013901fcbc8069ac20e661560fd731afbb961517ebee61da747609cc870",
+          "api_metadata": null
+        },
+        {
+          "name": "Required Constraints",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Required-Constraints",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -125,13 +716,233 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Maximum-Frequencies",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:45.957746",
-          "hash": "961b4ff292182a9710cb6d6a84d9e2966eac937ad795edaad5a7f09b5034e751",
+          "api_metadata": null
+        },
+        {
+          "name": "Resource Utilization",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Resource-Utilization",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Filter Architectures",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Filter-Architectures",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Test Bench",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Test-Bench",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Output Generation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Output-Generation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Port Changes",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Port-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Installation",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Installation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Pinout",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Pinout",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Feature Summary",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Feature-Summary",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Debug Tools",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Debug-Tools",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Full Precision",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Full-Precision",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Reference Boards",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Reference-Boards",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Reference",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Blocking Behavior",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Blocking-Behavior",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TLAST Options",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TLAST-Options",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Integer Coefficients",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Integer-Coefficients",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "General",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/General",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Simulation Debug",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Simulation-Debug",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Windows",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Windows",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Filter Specification",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Filter-Specification",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Specification",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Summary Tab",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Summary-Tab",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Algorithm",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Algorithm",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Coefficient Quantization",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Coefficient-Quantization",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Answer Records",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Answer-Records",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Coefficient Reload",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Coefficient-Reload",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Linux",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Linux",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Latency Changes",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Latency-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -139,13 +950,80 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Interface-Timing",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:53.207288",
-          "hash": "0c9d7700f0429ca6a94bcc559ce4019a0eb2cda72546782298a5fb3ad6f53636",
+          "api_metadata": null
+        },
+        {
+          "name": "Basic Handshake",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Basic-Handshake",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Convergent Rounding",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Convergent-Rounding",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Debug Tools",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Debug-Tools",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Output Rounding",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Output-Rounding",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TDATA Structure",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TDATA-Structure",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Filter Types",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Filter-Types",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Reference Boards",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Reference-Boards",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Reference",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Product Specification",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Product-Specification",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Specification",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -153,13 +1031,134 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/MATLAB-Interface",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:53.207288",
-          "hash": "88dcb258dfb3843d2f3c2494eb9ace1f66b01d2cfeab7003b28c9ae05eb48ae1",
+          "api_metadata": null
+        },
+        {
+          "name": "C Model",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/C-Model",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Polyphase Decimator",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Polyphase-Decimator",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Resource Utilization",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Resource-Utilization",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Test Bench",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Test-Bench",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "RELOAD Channel",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/RELOAD-Channel",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Simulation Debug",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Simulation-Debug",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "C Model",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/C-Model",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Answer Records",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Answer-Records",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Transform Status",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Transform-Status",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TDATA Example",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/TDATA-Example",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TUSER Examples",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/TUSER-Examples",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TDATA Format",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/TDATA-Format",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Dependent Libraries",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Dependent-Libraries",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Transceiver Placement",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Transceiver-Placement",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -167,13 +1166,8 @@
           "url": "https://docs.amd.com/r/en-US/pg109-xfft/Clock-Placement",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:56.893563",
-          "hash": "47ccf00ae5f2f405e8318d1c55dd2c99932b313e7c31397acc586e98eef2d5d4",
           "api_metadata": null
         },
         {
@@ -181,13 +1175,8 @@
           "url": "https://docs.amd.com/r/en-US/pg109-xfft/Clock-Management",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:56.893563",
-          "hash": "bd282d1809a3fde6c23cccd5ddc1a4f7448aa2aa9b98ae7f1261a954fa3b56ff",
           "api_metadata": null
         },
         {
@@ -195,13 +1184,206 @@
           "url": "https://docs.amd.com/r/en-US/pg109-xfft/Clock-Frequencies",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:34:56.893563",
-          "hash": "27faf54c56012fb9f2b30e39a4c4742bed63fe3855dc3bdcbbbb6a5be2413414",
+          "api_metadata": null
+        },
+        {
+          "name": "Required Constraints",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Required-Constraints",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Event Signals",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Event-Signals",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Quantize Only",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Quantize-Only",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Channel Specification",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Channel-Specification",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Specification",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Hilbert Transform",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Hilbert-Transform",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Interpolated Filter",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Interpolated-Filter",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Dynamic Arrays",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Dynamic-Arrays",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Filter Symmetry",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Filter-Symmetry",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "IP Symbol Tab",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/IP-Symbol-Tab",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Coefficient Padding",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Coefficient-Padding",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Synthesis and Implementation",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Synthesis-and-Implementation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Type Definitions",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Type-Definitions",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Denormalized Numbers",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Denormalized-Numbers",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Functionality Changes",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Functionality-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Output Generation",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Output-Generation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Port Changes",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Port-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Parameter Changes",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Parameter-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TREADY and TVALID",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TREADY-and-TVALID",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "CONFIG Channel",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/CONFIG-Channel",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Example 2",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Example-2",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Licensing and Ordering",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Licensing-and-Ordering",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Demonstration Test Bench",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Demonstration-Test-Bench",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -209,13 +1391,134 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/C-Model-Interface",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:00.785348",
-          "hash": "d461a769cff15e3753a9b62f2855351348490eb384ea1f791ea3c39595d899c8",
+          "api_metadata": null
+        },
+        {
+          "name": "Design Flow Steps",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Design-Flow-Steps",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Super Sample Rate",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Super-Sample-Rate",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TUSER Options",
+          "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/TUSER-Options",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Basic Handshake",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Basic-Handshake",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Example 1",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Example-1",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "IP Facts",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/IP-Facts",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Configuration Channel",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Configuration-Channel",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Latency Changes",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Latency-Changes",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Status Channel",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Status-Channel",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Rounding Implementation",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Rounding-Implementation",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TUSER Format",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/TUSER-Format",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "TDATA Fields",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/TDATA-Fields",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Transform Size",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Transform-Size",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
+          "api_metadata": null
+        },
+        {
+          "name": "Dependent Libraries",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Dependent-Libraries",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -223,33 +1526,32 @@
           "url": "https://docs.amd.com/r/en-US/pg149-fir-compiler/Event-Interface",
           "source": "xilinx",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:04.645348",
-          "hash": "035b70bd9dad41c483d0d6bad5d26bd4aa3b2ec8971f65478a67fd5434e32ad9",
+          "api_metadata": null
+        },
+        {
+          "name": "Block Exponent",
+          "url": "https://docs.amd.com/r/en-US/pg109-xfft/Block-Exponent",
+          "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "Document",
+          "file_type": "html",
           "api_metadata": null
         }
-      ],
-      "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=Document_Type_custom~%22Data%20Sheet%22_%22User%20Guides%20%26%20Manuals%22*Product_custom~%22IP%20Cores%20%28Adaptive%20SoC%20%26%20FPGA%29%22&date-filters=ft%253AlastEdition~last_month&content-lang=en-US"
+      ]
     },
     "altera": {
-      "document_count": 119,
+      "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
+      "document_count": 118,
       "documents": [
         {
           "name": "DSP Builder (Advanced Blockset): Handbook",
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683337/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "DSP",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "44ded7215a63c82f5b00e2fea99af7aca6c524defb5030a3bd1a2ddcc54cdff6",
           "api_metadata": null
         },
         {
@@ -257,13 +1559,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683632/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "0109e522a0dcd9bbc2738cfc82d21cf10dacc2960b68524e4ff4da060f013853",
           "api_metadata": null
         },
         {
@@ -271,13 +1568,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683832/21-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "5ec82f0a56f906652b0d40bd7e7965a8b13f7bd34c2713a9b5d9ccbc87928f09",
           "api_metadata": null
         },
         {
@@ -285,13 +1577,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683612/20-4.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "9d88a3df7040f2d63c8876cbd46cd81fa62b0ea281a37fbff708562877363549",
           "api_metadata": null
         },
         {
@@ -299,13 +1586,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683450/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "4b8512d8fd8d35724ac8d321e52eb37c2509745ade3ff197a528c9ed30c3e916",
           "api_metadata": null
         },
         {
@@ -313,13 +1595,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683772/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "d7151727770a3e7f11be39db3d1772a7c67e5201941eae6c38b8cfc91c6947f2",
           "api_metadata": null
         },
         {
@@ -327,13 +1604,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683206/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "ce7fe9265450db17840709b829410622d26a2bcca9e779bec3ae6ae4379122d9",
           "api_metadata": null
         },
         {
@@ -341,13 +1613,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683222/24-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "d1822b0e61c8bd0e6fa1e9bf1169a8f61af106168db346bc7577c86cdcd2cf63",
           "api_metadata": null
         },
         {
@@ -355,13 +1622,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683228/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "520525d5ad5e18066289b0efbf4a8beeb38627ce39b572526ac0b62ecb225f77",
           "api_metadata": null
         },
         {
@@ -369,13 +1631,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683870/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "fc6d99324e45a13d5bfb09515a329f5a0350183a4fbb6396f31630704e8a3661",
           "api_metadata": null
         },
         {
@@ -383,13 +1640,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683174/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "ebc8e3b6019f03068ea184ebfd5c43c6ee0e788783ff023bbbab4ee27b5b47da",
           "api_metadata": null
         },
         {
@@ -397,13 +1649,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683838/20-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "3d68d1573f99bfd4ac91c2f3e35ecc4ab9abf518d8707fbd8e7a996af9b90b71",
           "api_metadata": null
         },
         {
@@ -411,13 +1658,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683091/22-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Specification",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "88bbc1fd75e5236f12332b95a93a1b1d01a019a22af575a83480f1a5602241de",
           "api_metadata": null
         },
         {
@@ -425,13 +1667,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683144/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "c1b96c4f5eabd6f13b517eb01a276d1877574a3d89406b25d238c9ecf9af3dda",
           "api_metadata": null
         },
         {
@@ -439,13 +1676,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/838773/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "9ee888cbcde4a3a8ee79409e190c6b00c8503df07c8e18b587c4ed124fac120e",
           "api_metadata": null
         },
         {
@@ -453,13 +1685,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683766/24-1-2-0-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "0be504c2ec84ea85dc4afc0e4b6019e903387d1670f04fc4c27c81a04c4250a1",
           "api_metadata": null
         },
         {
@@ -467,13 +1694,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683423/24-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "6e536f8272b3ac1441765dc8e519b31b805072268ab4b470946b06010c8824e7",
           "api_metadata": null
         },
         {
@@ -481,13 +1703,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683122/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "bb59f40624359e345a30ad57083b180fb512935306140d7e89a30af33211c8ff",
           "api_metadata": null
         },
         {
@@ -495,13 +1712,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683107/24-1-21-1-5.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "07103406985c47602b005f9a1d4893d907f1680454d401b6e87da5853ad4b4aa",
           "api_metadata": null
         },
         {
@@ -509,13 +1721,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683750/24-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "3a6663b648de2b901bb6eb4300df5959adf2c1b9127626f732ca332c6b9d9d94",
           "api_metadata": null
         },
         {
@@ -523,13 +1730,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683381/17-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "8ac30e48c3963661ab4a97441460fc4d2d4656bad1049d47262a8c27e154bc26",
           "api_metadata": null
         },
         {
@@ -537,27 +1739,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683418/24-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:20.884554",
-          "hash": "22bc36bee826caa222bccc549c60ce59982d56bd942a91291d1c127d225690a2",
-          "api_metadata": null
-        },
-        {
-          "name": "https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/wp/wp-01220-hyperflex-architecture-fpga-socs.pdf",
-          "url": "https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/wp/wp-01220-hyperflex-architecture-fpga-socs.pdf",
-          "source": "altera",
-          "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
-          "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
-          "file_type": "pdf",
-          "scraped_at": "2025-07-08 22:35:20.903785",
-          "hash": "c37f708f917f3577655facdc477e5b9f07f8f4f0241e36ac3635cf5f495e6570",
           "api_metadata": null
         },
         {
@@ -565,27 +1748,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683058/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "5ae289510dc1f9609adbcfd38873d68066a18ea0949dad94b77a4c331c1eb089",
-          "api_metadata": null
-        },
-        {
-          "name": "FPGA AI Suite: IP Reference Manual",
-          "url": "https://www.intel.com/content/www/us/en/docs/programmable/768974/2025-1.html",
-          "source": "altera",
-          "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
-          "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
-          "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "be090105ce22c41450022f4a49c7ae97381fa15a6ac0bf64f8985cd0aab9348e",
           "api_metadata": null
         },
         {
@@ -593,13 +1757,17 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683648/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "e843553a51ee273f2d6f369479c1d7af0de117568c8ea4fddb97a57b56107466",
+          "api_metadata": null
+        },
+        {
+          "name": "FPGA AI Suite: IP Reference Manual",
+          "url": "https://www.intel.com/content/www/us/en/docs/programmable/768974/2025-1.html",
+          "source": "altera",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "category": "User Guide",
+          "file_type": "html",
           "api_metadata": null
         },
         {
@@ -607,13 +1775,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683734/24-1-22-3-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "722ca3ffd67a3937dbd2197e18018d341e7db3f644d38e05ee369989cde17709",
           "api_metadata": null
         },
         {
@@ -621,13 +1784,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683238/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "f629be13daeb5137b570abc41f04265d145074c9aa0958d61e6cca0411ed093f",
           "api_metadata": null
         },
         {
@@ -635,13 +1793,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683280/17-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "45e90addf291da5f5c6a7c874ba08f46a960df44c3b14a9eda85c5e736e146e3",
           "api_metadata": null
         },
         {
@@ -649,13 +1802,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683242/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "fbeec4f09fab746817575564fdeabf52f520a2eb2e1be7bfe393440ee53d3d7c",
           "api_metadata": null
         },
         {
@@ -663,13 +1811,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683873/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "6628572ef42736cf3a14daf903c13b8116e8fda9d5c8f3a2cd8f12446014629c",
           "api_metadata": null
         },
         {
@@ -677,13 +1820,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683602/23-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "6fbbbc7983ec60b5c17fd6ee1c501b877c37d470874fef6fcc00c48f29f6a29f",
           "api_metadata": null
         },
         {
@@ -691,13 +1829,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683562/24-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "3148b6dde981175e34f591bd16ff22446d0f8582d475e8bb398fdec61b4765da",
           "api_metadata": null
         },
         {
@@ -705,13 +1838,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683108/23-3-3-1-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "ff7c73e4258fde4212e990e73b1f1e5002299b449abea2601833150833ce17b2",
           "api_metadata": null
         },
         {
@@ -719,13 +1847,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683117/21-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "018697b6a08395d54bb47de8ed8b94f9909f9412928aa3fef320414b2c9daaf2",
           "api_metadata": null
         },
         {
@@ -733,13 +1856,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683729/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "3418bef654182289c117801d5022e720c0e0719d42cd5fea92945af1387c5127",
           "api_metadata": null
         },
         {
@@ -747,13 +1865,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683486/24-2-22-2-0.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "946744d770a4a5687ab2e39751c30f83d2b6203f219c82e3ba7d015c7bf1c40c",
           "api_metadata": null
         },
         {
@@ -761,13 +1874,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683208/24-1-19-2-4.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "c0af6abaa9baa2a2f6cec2fec58b23f4d2101bd8d250e848aabd2aac261b234c",
           "api_metadata": null
         },
         {
@@ -775,13 +1883,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683152/24-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "7f83e52eba1e4df8ff134bde163f8ccb3f5d9dde9d1b5770ef9ab1bfc90bb180",
           "api_metadata": null
         },
         {
@@ -789,13 +1892,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683330/24-1-20-1-0.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "702c9bf05432522eb8349c71af9af80f6ee2617f75d59a280985ecdd937dc095",
           "api_metadata": null
         },
         {
@@ -803,13 +1901,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683374/17-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "9c37051c28db3116ee3ef12f7a25dc912f4406b4146675922722a723735aefb7",
           "api_metadata": null
         },
         {
@@ -817,13 +1910,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683738/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "b998977ab9fe993f4a9815f57efa957a7106e275980aec57ecd83a5c42a0c7db",
           "api_metadata": null
         },
         {
@@ -831,13 +1919,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683181/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Data Sheet",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "e846bde60a71cef74f3651998d5c6b0b14d860bcaf4eca98bd0a1bfd6d870b2c",
           "api_metadata": null
         },
         {
@@ -845,13 +1928,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683762/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.803347",
-          "hash": "6beb07d856bd4809db8920a0e2c062474b34bcf7c465423b500b59201d0f87f6",
           "api_metadata": null
         },
         {
@@ -859,13 +1937,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683867/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.804346",
-          "hash": "e15e465c40ebe4a1705d914ac5459ccaf088a93dc8328757f5ed85c148877b68",
           "api_metadata": null
         },
         {
@@ -873,13 +1946,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683674/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.804346",
-          "hash": "5ef5626990c95c231ad01b9a425cbde78c1bafa314bba6099d27ed5cb509c56a",
           "api_metadata": null
         },
         {
@@ -887,13 +1955,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/784383/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:24.804346",
-          "hash": "dab6f6f0d60aea4ad26ca41bfb107826bf26d067fcaf237639133f5da205760c",
           "api_metadata": null
         },
         {
@@ -901,13 +1964,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683236/24-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "696ca1403306eaf1828e58c398769eb690667807b2ca02e57ad4ee401428f74e",
           "api_metadata": null
         },
         {
@@ -915,13 +1973,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683798/23-4-19-7-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "e2a558a8bb4fcb8973e3673aa1f0662b9fa4021cc9260a6fd82ebbfd0864a0d7",
           "api_metadata": null
         },
         {
@@ -929,13 +1982,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683100/24-2-22-2-0.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "cdd8760ffe574e8cb335d354dcd42a826f1773717d5f27ecf3485b3bb698e677",
           "api_metadata": null
         },
         {
@@ -943,13 +1991,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683667/23-4.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "2c296de7a9232d9f704de7b4faf4a6517a0962be4f2e9ad63b26f45099f14769",
           "api_metadata": null
         },
         {
@@ -957,13 +2000,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683621/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "c2d926d4a854355108ae22906525290831c386bdb6e2a9470182d7f7c180fa32",
           "api_metadata": null
         },
         {
@@ -971,13 +2009,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683303/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "9b519ae592fd06a7e47d15cf2b57975bdd6c845f80f972e40f31c1b75ed5d1bd",
           "api_metadata": null
         },
         {
@@ -985,13 +2018,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683561/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "7c28c0b93435e0626d4c9d59b49395faaca77091beea44db540f3bf36571b50a",
           "api_metadata": null
         },
         {
@@ -999,13 +2027,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683290/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "abb6bb0f49f081c873bca00f8c26735e07a76cd89dd948007b9301c331c016a4",
           "api_metadata": null
         },
         {
@@ -1013,13 +2036,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683339/21-3-19-1-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "81a0eccfae4c5148033b67352bbd52a9fbc5e69d8ff362511deef4afa58e5649",
           "api_metadata": null
         },
         {
@@ -1027,13 +2045,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683416/22-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "ef6c6dac6e2ee9777962c7287b5df53baae7ddffb62796d18210262831884da3",
           "api_metadata": null
         },
         {
@@ -1041,13 +2054,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683723/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "b3c047069aa83ed6212a4c92f0e33506e92dd1ea815444255d6282d315a45df4",
           "api_metadata": null
         },
         {
@@ -1055,13 +2063,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683699/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "939020a4008c52eab364f2a9fe22c3f843ad3bbbcf9810a8f9c7348e230f4538",
           "api_metadata": null
         },
         {
@@ -1069,13 +2072,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683357/23-3-3-1-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "0ef1d0669baa2c81f623cb46308cec462fae9a9710b0684eb46d196b5d02d349",
           "api_metadata": null
         },
         {
@@ -1083,13 +2081,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683615/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Tutorial",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "3f2f700d1c6e34289e95fc40f8c5a2de147e3d058e6ca866b4b4901685938e71",
           "api_metadata": null
         },
         {
@@ -1097,13 +2090,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683531/18-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Reference",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "3812b7f48394031c9d4a523d9215fc1dbcf3c7488b2c4ea006f611eb239ceb74",
           "api_metadata": null
         },
         {
@@ -1111,13 +2099,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683320/17-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "8b1be0dd337564c8f99286344f5ebc9937115ccf7fa199fa8d38866ae7b5db78",
           "api_metadata": null
         },
         {
@@ -1125,13 +2108,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683701/24-1-19-7-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "a6247d2de0a4accd1a666cad5e5bb16ef68b05241e7a9cd224d55260f343ba2b",
           "api_metadata": null
         },
         {
@@ -1139,13 +2117,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683221/20-3-19-1-0.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "3ac34bb07ab09eb9fab6d2997020078b2dc2dc151080539dba91eb6b8842da69",
           "api_metadata": null
         },
         {
@@ -1153,13 +2126,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683560/18-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Reference",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "f8a573d9a290a5b0e6f2ea4feb722a916692887bdc5699d9a6eecd88f996f7c4",
           "api_metadata": null
         },
         {
@@ -1167,13 +2135,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683472/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "c4cf0a0e84aee7a6fe9cdb82342923e761b33e84bf46af428659b9a53c5a43e4",
           "api_metadata": null
         },
         {
@@ -1181,13 +2144,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683445/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "54f88453cf9315f825f805390f1cf49e87d9174328ce6c46b038bab6a72d055f",
           "api_metadata": null
         },
         {
@@ -1195,13 +2153,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683808/23-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "e1886f9303081f80520508ccd153267258405241b7ca586da80a6ed070b69112",
           "api_metadata": null
         },
         {
@@ -1209,13 +2162,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683402/24-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:28.694533",
-          "hash": "864477e7396bdadafbaf07fd8eb4d60beff3a67e47e97e5fa3dcdaddbbf84854",
           "api_metadata": null
         },
         {
@@ -1223,13 +2171,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683175/19-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "947f04893979004c05a4be0cb9671973027c07d1ba914a1bb6e732a5e49efdbd",
           "api_metadata": null
         },
         {
@@ -1237,13 +2180,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683882/24-1-2-0-4.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "b3c6976546b994faa1d4b34bc78fd16f2c51d5d790a0f50d82dd78ef6df12a81",
           "api_metadata": null
         },
         {
@@ -1251,13 +2189,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683490/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "ba6674ed6af22675f81d9a57ee58f6349af1e2d1cbc80107d7b4ad856485333d",
           "api_metadata": null
         },
         {
@@ -1265,13 +2198,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683655/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "06370b3f62917c129b31356c5e084e14d445853be5b28a3a7bdeade438527de8",
           "api_metadata": null
         },
         {
@@ -1279,13 +2207,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683847/24-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "64674491a3b550a4b4b6a4c2418c903a15447b83d026ea54c1d3c90cf00fdc96",
           "api_metadata": null
         },
         {
@@ -1293,13 +2216,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683225/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "4b0be1bf84b64a9482ffa788f72f53765e044055f241a8e882bd599768800000",
           "api_metadata": null
         },
         {
@@ -1307,13 +2225,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683149/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "e261cd5fd359766aa127c53759146a111080ff736c795b9d3f82dd06fe1e01e2",
           "api_metadata": null
         },
         {
@@ -1321,13 +2234,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683028/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "5f94618528ed9c5570096bacca3ee112de920ce43f9b9859ecb38eb31ce7567f",
           "api_metadata": null
         },
         {
@@ -1335,13 +2243,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683085/20-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "08274f6b097244cea982f418d7bba9c0f8428763ab2474579a9931d494ac826e",
           "api_metadata": null
         },
         {
@@ -1349,13 +2252,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683406/24-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "ef7bce18f16962c97914f679487c4db1f918c8fb4ebae44a81755490189f61bc",
           "api_metadata": null
         },
         {
@@ -1363,13 +2261,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/836192/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Reference",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "b73386a407637b444e06895c390707059061c6cfea84dc845ba2bad7f530204f",
           "api_metadata": null
         },
         {
@@ -1377,13 +2270,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/691274/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "3c5ad6dab45a2c418bb7162bf8341a7d1e2db96fc45a6f2efa2aee40008ba663",
           "api_metadata": null
         },
         {
@@ -1391,13 +2279,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683426/23-3-22-0-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "d31daa4de07eea661bcd4b0b759b76a8cf8b987cd6757bd9757ab430e8308eb5",
           "api_metadata": null
         },
         {
@@ -1405,13 +2288,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683111/23-4.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "2d06fe4b91441aa6e723f9c967fe13451885995931422b04ebe14726819b07d2",
           "api_metadata": null
         },
         {
@@ -1419,13 +2297,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683689/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "762dec50573840c0efcbc9d215fbf1b965ac008ceb15996341b6615a02c80db2",
           "api_metadata": null
         },
         {
@@ -1433,13 +2306,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683670/24-1-5-0-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "e32ebf3d8f3ea4554c11685a7d46fa2644544f27fd8f59338aea04bfe6dd5d1f",
           "api_metadata": null
         },
         {
@@ -1447,13 +2315,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683143/24-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "8828665a2c2ea002b784d00029a849cc5c619fed023fcc55e5b21ef7bd5cefce",
           "api_metadata": null
         },
         {
@@ -1461,13 +2324,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683600/21-3-19-1-0.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "2a3148777665dfc9178949a4520d16bea1f8c66fedde351fc6f983f2f8f20080",
           "api_metadata": null
         },
         {
@@ -1475,13 +2333,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683235/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "5836fb2423b224d4745aff7b8fb36c271e3ed97554ab274955973043923033c5",
           "api_metadata": null
         },
         {
@@ -1489,13 +2342,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683061/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "303930fd7c815d5795c5b522823234e78bd426feb37b99b95ac676b9b4dc0958",
           "api_metadata": null
         },
         {
@@ -1503,13 +2351,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683102/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "259e3faf8e0c6632cf1d16d53bcb01997006aadca243ab7c243647a29f4f266e",
           "api_metadata": null
         },
         {
@@ -1517,13 +2360,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683243/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "f0ac6568cc0f2bd81091714cb9ae1c95098875346ef993b67ba5d9930d951f4e",
           "api_metadata": null
         },
         {
@@ -1531,13 +2369,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683444/20-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "3f626f5a2a7e9d0a1301b123367a1b5c1ead74374f331d12843d3997c6bc7c35",
           "api_metadata": null
         },
         {
@@ -1545,13 +2378,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683154/23-4-20-3-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "e8a22f6f63db8f8411dd3024bec62fba8b9de6134e9e6f6c6063920ff7118742",
           "api_metadata": null
         },
         {
@@ -1559,13 +2387,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683725/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:32.595946",
-          "hash": "5031af560d84195edb55c2dbc979dfa86d64a52de0633c7c2726869670d7db25",
           "api_metadata": null
         },
         {
@@ -1573,13 +2396,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683468/23-2.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "6d81b9630b3f347e795e2dcb9fe36d5ab141b3008b052aeefa1fb6a907ddd50e",
           "api_metadata": null
         },
         {
@@ -1587,13 +2405,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683885/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "6f454e6936685b7bdf48a03ee94710f52bfef58d98b280d02be813cec7ed8072",
           "api_metadata": null
         },
         {
@@ -1601,13 +2414,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683329/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "0f1a6767b38e7998f1b3e550f3e97a55a073121648dba3a731ed3ed09de68377",
           "api_metadata": null
         },
         {
@@ -1615,13 +2423,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683609/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "148fa3515b152ff90e38034d1e639e3aae1e79a181056511cdfd25db31750af7",
           "api_metadata": null
         },
         {
@@ -1629,13 +2432,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683432/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "a73ee6ca8047b5554872875a470cdef5f9b1a1371e75d0f6b089721f8d763192",
           "api_metadata": null
         },
         {
@@ -1643,13 +2441,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683273/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "8e44cc373186b4b07849c19ec74a13b144e4da964f4223c3a1f3b66266675051",
           "api_metadata": null
         },
         {
@@ -1657,13 +2450,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683726/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "5d9d53fab46d62dad414989f9d61a00471f41193bcdcae52d7a51e036ea76fd6",
           "api_metadata": null
         },
         {
@@ -1671,13 +2459,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683664/19-3.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "1cd86e16322e60299d1191569dd855a93b25d0d885d40c150b528aac23794f92",
           "api_metadata": null
         },
         {
@@ -1685,13 +2468,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683787/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "dc697fea0a72512844243f0868f91dc4497a8ddce713154f23d21d34997d4a18",
           "api_metadata": null
         },
         {
@@ -1699,13 +2477,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683130/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "39e2e45545093ab3059276c18b72d714a893cfe6ce86d0a8c63bbdbc0fac714c",
           "api_metadata": null
         },
         {
@@ -1713,13 +2486,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683727/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "77716dbb2574175a831286b74b2eea7eba9d373c63f5b57ffc0b943985ba8cb9",
           "api_metadata": null
         },
         {
@@ -1727,13 +2495,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683387/21-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": "Stratix",
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:36.530330",
-          "hash": "5af1ed37d68cb84cc4a9e67a5c4d8fdc23a4c9cd29882dcefeda78b335e7469f",
           "api_metadata": null
         },
         {
@@ -1741,13 +2504,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683740/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "86fcb98c371ba576a88f35c73649dbed2268ae12f814fa0f3b1880807ce22978",
           "api_metadata": null
         },
         {
@@ -1755,13 +2513,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/768972/2025-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "999075a89ea7c96f2ed1ceaca70ae281421d51d30cbc2bbb12929fda640d2962",
           "api_metadata": null
         },
         {
@@ -1769,13 +2522,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683366/24-1-1-0-8.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "ce19adbeb728a247d47a0db53c6564657a74ff226962eccd8f5666ef62ad8536",
           "api_metadata": null
         },
         {
@@ -1783,13 +2531,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683680/24-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "ade7fe953663e9320bc0e0bd0b84292b26605d0f236ee2100ea48ebeaf46e7bc",
           "api_metadata": null
         },
         {
@@ -1797,13 +2540,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683649/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "f110c1ac75b3754b067207a9511a8a7c65d98ed0853c03456a884fdc42df5b5b",
           "api_metadata": null
         },
         {
@@ -1811,13 +2549,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683429/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "e82b80055271cf184f4a7fedb91ba1d3dcd520ad5bd2aa64211fbb52527f3b38",
           "api_metadata": null
         },
         {
@@ -1825,13 +2558,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683316/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "fb1109fae879da7530ef25c0186b58eac82857f57ec39b923c9e440fba056325",
           "api_metadata": null
         },
         {
@@ -1839,13 +2567,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683441/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "d104a4a470f7816026e953405d10c40b25a8c41236b36142ff987167a51aca51",
           "api_metadata": null
         },
         {
@@ -1853,13 +2576,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683120/17-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "User Guide",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "510cd9047abd408710d06dd33c4152fce63286585dc9f6647a177b65af0e85ee",
           "api_metadata": null
         },
         {
@@ -1867,13 +2585,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683812/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "165c1dc6cb9a3cf90a70ab55ab02be26fd1faf0c129020fe247722a03dc9b8e1",
           "api_metadata": null
         },
         {
@@ -1881,13 +2594,8 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683300/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "IP Core",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "bda6f480b10d4b38b90e4a8d34d6b50914a08af48b94c34c9b6a3d86a9a2092d",
           "api_metadata": null
         },
         {
@@ -1895,17 +2603,11 @@
           "url": "https://www.intel.com/content/www/us/en/docs/programmable/683155/current.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
-          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
           "category": "Document",
-          "fpga_series": null,
-          "last_updated": null,
           "file_type": "html",
-          "scraped_at": "2025-07-08 22:35:40.376098",
-          "hash": "a990111d50e73a104384ab848764991a9dbefe0f6582fa04992b2651f8ed2f9b",
           "api_metadata": null
         }
-      ],
-      "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy"
+      ]
     }
   }
 }

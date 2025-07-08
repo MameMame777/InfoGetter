@@ -487,6 +487,14 @@ class XilinxScraper(BaseScraper):
                     if not title:
                         continue
                     
+                    # 特定の除外タイトルをチェック（早期リターン）
+                    if self._is_excluded_title(title):
+                        continue
+                    
+                    # URL除外チェックを追加
+                    if self._is_excluded_url(full_url):
+                        continue
+                    
                     # FPGA関連のドキュメントかどうかをチェック
                     if not self._is_fpga_related(title + ' ' + full_url):
                         continue
@@ -574,37 +582,271 @@ class XilinxScraper(BaseScraper):
         else:
             return 'Document'
     
+    def _is_excluded_title(self, title: str) -> bool:
+        """特定のタイトルを除外するかどうかを判定"""
+        title_lower = title.lower().strip()
+        
+        # 除外すべきタイトル（完全一致または部分一致）
+        excluded_titles = [
+            '包括的な用語',
+            'comprehensive terms',
+            'glossary',
+            '用語集',
+            'terms and conditions',
+            'privacy policy',
+            'legal notice',
+            'cookie policy',
+            'accessibility',
+            'site map',
+            'sitemap',
+            'search',
+            'search results',
+            'navigation',
+            'home',
+            'homepage',
+            'about',
+            'about us',
+            'contact',
+            'support',
+            'help',
+            'documentation home',
+            'doc home',
+            '言語',
+            'language',
+            'language selection',
+            'select language',
+            '日本語',
+            'english',
+            'deutsch',
+            'français',
+            'italiano',
+            'español',
+            '中文',
+            '한국어'
+        ]
+        
+        # 完全一致チェック
+        if title_lower in excluded_titles:
+            return True
+        
+        # 部分一致チェック（特定のパターンのみ）
+        if title_lower == '包括的な用語' or title_lower == 'comprehensive terms':
+            return True
+        
+        # URL風のタイトル（例：https://docs.xilinx.com/...）を除外
+        if title_lower.startswith(('http://', 'https://', 'www.')):
+            return True
+        
+        # 空または非常に短いタイトルを除外
+        if len(title_lower) <= 2:
+            return True
+        
+        return False
+    
+    def _is_excluded_url(self, url: str) -> bool:
+        """特定のURLを除外するかどうかを判定"""
+        if not url:
+            return True
+        
+        url_lower = url.lower()
+        
+        # 除外すべきURLパターン
+        excluded_url_patterns = [
+            # 法的・企業文書
+            '/modern-slavery',
+            '/forced-labor',
+            '/tax-strategy',
+            '/uk-tax',
+            '/compliance',
+            '/governance',
+            '/investor',
+            '/annual-report',
+            '/sustainability',
+            '/social-responsibility',
+            '/csr',
+            '/ethics',
+            '/code-of-conduct',
+            '/supplier-code',
+            '/human-rights',
+            '/diversity',
+            '/environmental',
+            '/carbon',
+            # 一般的なサイト機能
+            '/contact',
+            '/about',
+            '/careers',
+            '/jobs',
+            '/news',
+            '/press',
+            '/events',
+            '/training',
+            '/support',
+            '/help',
+            '/feedback',
+            '/search',
+            '/login',
+            '/register',
+            '/profile',
+            '/account',
+            '/settings',
+            '/language',
+            '/locale',
+            # ナビゲーション
+            '/sitemap',
+            '/navigation',
+            '/menu',
+            '/breadcrumb',
+            # プライバシー関連
+            '/privacy',
+            '/terms',
+            '/legal',
+            '/cookie',
+            '/disclaimer',
+            '/copyright'
+        ]
+        
+        # URLパターンをチェック
+        for pattern in excluded_url_patterns:
+            if pattern in url_lower:
+                return True
+        
+        # PDFやHTMLファイル以外のファイル形式を除外
+        excluded_extensions = [
+            '.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico',
+            '.zip', '.tar', '.gz', '.xml', '.json', '.csv', '.txt'
+        ]
+        
+        for ext in excluded_extensions:
+            if url_lower.endswith(ext):
+                return True
+        
+        # 短すぎるURLを除外
+        if len(url) < 20:
+            return True
+        
+        return False
+    
     def _is_fpga_related(self, text: str) -> bool:
         """FPGA関連のドキュメントかどうかを判定"""
         text_lower = text.lower()
+        
+        # 特定の除外タイトル（完全一致）- "包括的な用語"を除外
+        exclude_titles = [
+            '包括的な用語',
+            'comprehensive terms',
+            'glossary',
+            '用語集'
+        ]
+        
+        # タイトルの完全一致チェック
+        for exclude_title in exclude_titles:
+            if text_lower.strip() == exclude_title:
+                return False
+        
+        # 一般的な除外キーワード（より限定的に、完全一致のみ）
+        exclude_keywords = [
+            'privacy policy',
+            'terms and conditions', 
+            'legal notice',
+            'cookie policy',
+            'disclaimer',
+            'copyright',
+            'login',
+            'register',
+            'sign in',
+            'sign up',
+            'language selection',
+            'select language',
+            '言語選択',
+            # 企業・法的文書の除外
+            'modern slavery statement',
+            'forced labor statement',
+            '強制労働に関する声明',
+            'uk tax strategy',
+            '英国税務戦略',
+            'tax strategy',
+            'corporate governance',
+            'investor relations',
+            'annual report',
+            'financial report',
+            'sustainability report',
+            'compliance statement',
+            'code of conduct',
+            'ethics policy',
+            'supplier code',
+            'human rights policy',
+            'diversity statement',
+            'environmental policy',
+            'carbon footprint',
+            'social responsibility',
+            'csr report',
+            # ナビゲーション・メニュー項目
+            'site map',
+            'sitemap',
+            'contact us',
+            'about us',
+            'careers',
+            'jobs',
+            'news',
+            'press release',
+            'events',
+            'webinar',
+            'training',
+            'support',
+            'help',
+            'feedback',
+            'search',
+            'home',
+            'back to top',
+            'breadcrumb',
+            'navigation',
+            'menu'
+        ]
+        
+        # 除外キーワードがある場合は除外（部分一致も含む）
+        for keyword in exclude_keywords:
+            if keyword in text_lower:
+                return False
+        
+        # 特に企業・法的文書のタイトルを部分一致で除外
+        corporate_exclusions = [
+            '強制労働',
+            '英国税務',
+            'forced labor',
+            'modern slavery',
+            'tax strategy',
+            'corporate governance',
+            'investor relations',
+            'annual report',
+            'sustainability report',
+            'compliance statement',
+            'diversity statement',
+            'environmental policy'
+        ]
+        
+        for exclusion in corporate_exclusions:
+            if exclusion in text_lower:
+                return False
         
         # FPGA関連のキーワード
         fpga_keywords = [
             'fpga', 'ip core', 'dsp', 'versal', 'zynq', 'artix', 'kintex', 'virtex', 'spartan',
             'adaptive soc', 'acap', 'vivado', 'vitis', 'hls', 'xilinx', 'programmable logic',
             'reconfigurable', 'hardware acceleration', 'ai engine', 'noc', 'processing system',
-            'programmable logic', 'clock', 'memory', 'interface', 'protocol', 'ethernet',
-            'pcie', 'ddr', 'axi', 'avalon', 'hdl', 'verilog', 'vhdl'
+            'clock', 'memory', 'interface', 'protocol', 'ethernet',
+            'pcie', 'ddr', 'axi', 'avalon', 'hdl', 'verilog', 'vhdl', 'system generator',
+            'fir compiler', 'filter', 'signal processing', 'digital signal processing',
+            'compiler', 'generator', 'user guide', 'manual', 'data sheet',
+            'pdf', 'documentation', 'guide', 'document'
         ]
-        
-        # 除外キーワード
-        exclude_keywords = [
-            'privacy', 'legal', 'terms', 'conditions', 'policy', 'statement', 'corporate',
-            'investor', 'financial', 'annual report', 'press release', 'news', 'career',
-            'job', 'marketing', 'sales', 'contact', 'support'
-        ]
-        
-        # 除外キーワードがある場合は除外
-        for keyword in exclude_keywords:
-            if keyword in text_lower:
-                return False
         
         # FPGA関連キーワードがある場合は含める
         for keyword in fpga_keywords:
             if keyword in text_lower:
                 return True
         
-        return False
+        # デフォルトでは含める（より包括的なアプローチ）
+        return True
     
     def _build_search_url(self) -> str:
         """設定から検索URLを構築"""
@@ -649,4 +891,4 @@ class XilinxScraper(BaseScraper):
         
         self.logger.info(f"Built search URL: {full_url}")
         return full_url
-    
+
