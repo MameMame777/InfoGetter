@@ -25,3 +25,16 @@ class Document(BaseModel):
     
     # API固有の追加フィールド
     api_metadata: Optional[dict] = None
+    
+    def to_dict(self) -> dict:
+        """JSONシリアライズ用の辞書を作成（不要なフィールドを除外）"""
+        return {
+            "name": self.name,
+            "url": str(self.url),
+            "source": self.source,
+            "source_type": str(self.source_type),
+            "search_url": self.search_url,
+            "category": self.category,
+            "file_type": self.file_type,
+            "api_metadata": self.api_metadata
+        }

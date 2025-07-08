@@ -133,23 +133,60 @@ notifications:
   },
   "sources": {
     "xilinx": {
+      "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=...",
       "document_count": 8,
       "documents": [
         {
           "name": "Versal ACAP DSP Engine User Guide",
           "url": "https://docs.amd.com/...",
           "source": "xilinx",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "search_url": "https://docs.amd.com/search/all?query=DSP&value-filters=...",
           "category": "User Guide",
-          "fpga_series": "Versal",
           "file_type": "pdf",
-          "scraped_at": "2025-07-08T10:30:00",
-          "hash": "abc123..."
+          "api_metadata": null
+        }
+      ]
+    },
+    "altera": {
+      "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
+      "document_count": 7,
+      "documents": [
+        {
+          "name": "DSP Builder (Advanced Blockset): Handbook",
+          "url": "https://www.intel.com/...",
+          "source": "altera",
+          "source_type": "DataSourceType.WEB_SCRAPING",
+          "search_url": "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy",
+          "category": "Handbook",
+          "file_type": "pdf",
+          "api_metadata": null
         }
       ]
     }
   }
 }
 ```
+
+### JSONフィールドの説明
+
+- **scan_info**: スキャン全体の情報
+  - `timestamp`: スキャン実行時刻
+  - `total_sources`: 処理したソース数
+  - `total_documents`: 取得したドキュメント総数
+
+- **sources**: ソース別のドキュメント情報
+  - `search_url`: 検索に使用したURL
+  - `document_count`: 取得したドキュメント数
+  - `documents`: ドキュメント配列
+    - `name`: ドキュメント名
+    - `url`: ドキュメントURL
+    - `source`: ソース名（xilinx, altera）
+    - `source_type`: ソースタイプ（web_scraping, rest_api, rss_feed）
+    - `search_url`: 検索に使用したURL
+    - `category`: カテゴリ（User Guide, Data Sheet, IP Core等）
+    - `file_type`: ファイルタイプ（pdf, html等）
+    - `api_metadata`: API固有のメタデータ（通常null）
 
 ## テスト
 
@@ -190,6 +227,7 @@ pip install webdriver-manager
 ### メール送信エラー
 
 Gmailを使用する場合はアプリパスワードを設定してください：
+
 1. Google アカウントの2段階認証を有効化
 2. アプリパスワードを生成
 3. 設定ファイルまたは環境変数 `EMAIL_PASSWORD` に設定
@@ -197,6 +235,7 @@ Gmailを使用する場合はアプリパスワードを設定してください
 ### ログ確認
 
 ログファイルは `logs/scraper.log` に出力されます：
+
 ```bash
 tail -f logs/scraper.log
 ```

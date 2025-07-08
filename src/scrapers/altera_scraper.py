@@ -169,6 +169,14 @@ class AlteraScraper(BaseScraper):
                     if not title:
                         continue
                     
+                    # 特定の除外タイトルをチェック
+                    if self._is_excluded_title(title):
+                        continue
+                    
+                    # URL除外チェック
+                    if self._is_excluded_url(full_url):
+                        continue
+                    
                     # FPGA関連のドキュメントかどうかをチェック
                     if not self._is_fpga_related(title + ' ' + full_url):
                         continue
@@ -274,7 +282,16 @@ class AlteraScraper(BaseScraper):
         exclude_keywords = [
             'privacy', 'legal', 'terms', 'conditions', 'policy', 'statement', 'corporate',
             'investor', 'financial', 'annual report', 'press release', 'news', 'career',
-            'job', 'marketing', 'sales', 'contact', 'support'
+            'job', 'marketing', 'sales', 'contact', 'support',
+            # 企業・法的文書の追加
+            'modern slavery', 'forced labor', '強制労働', 'uk tax strategy', '英国税務戦略',
+            'tax strategy', 'corporate governance', 'sustainability', 'social responsibility',
+            'csr report', 'compliance', 'ethics', 'code of conduct', 'supplier code',
+            'human rights', 'diversity', 'environmental', 'carbon footprint',
+            # ナビゲーション要素
+            'language selection', 'sign in', 'register', 'login', 'sitemap',
+            'breadcrumb', 'navigation', 'menu', 'search results', 'home page',
+            'back to top', 'contact us', 'about us', 'help', 'feedback'
         ]
         
         # 除外キーワードがある場合は除外
@@ -601,3 +618,152 @@ class AlteraScraper(BaseScraper):
         
         self.logger.info(f"Built search URL: {full_url}")
         return full_url
+    
+    def _is_excluded_title(self, title: str) -> bool:
+        """特定のタイトルを除外するかどうかを判定"""
+        if not title:
+            return True
+        
+        title_lower = title.lower().strip()
+        
+        # 除外するタイトルのリスト
+        excluded_titles = [
+            'search results',
+            'documentation home',
+            'documentation',
+            'home',
+            'back',
+            'next',
+            'previous',
+            'more',
+            'load more',
+            'show more',
+            'view all',
+            'see all',
+            'all results',
+            'search',
+            'filter',
+            'sort',
+            'page',
+            'results',
+            'found',
+            'matches',
+            'items',
+            '検索結果',
+            'glossary',
+            '用語集',
+            # 企業・法的文書
+            'modern slavery statement',
+            'forced labor statement',
+            '強制労働に関する声明',
+            'uk tax strategy',
+            '英国税務戦略',
+            'tax strategy',
+            'corporate governance',
+            'investor relations',
+            'privacy policy',
+            'terms and conditions',
+            'legal notice',
+            'cookie policy'
+        ]
+        
+        # 完全一致チェック
+        if title_lower in excluded_titles:
+            return True
+        
+        # 部分一致チェック（特定のパターンのみ）
+        if title_lower == '包括的な用語' or title_lower == 'comprehensive terms':
+            return True
+        
+        # URL風のタイトルを除外
+        if title_lower.startswith(('http://', 'https://', 'www.')):
+            return True
+        
+        # 空または非常に短いタイトルを除外
+        if len(title_lower) <= 2:
+            return True
+        
+        return False
+    
+    def _is_excluded_url(self, url: str) -> bool:
+        """特定のURLを除外するかどうかを判定"""
+        if not url:
+            return True
+        
+        url_lower = url.lower()
+        
+        # 除外すべきURLパターン
+        excluded_url_patterns = [
+            # 法的・企業文書
+            '/modern-slavery',
+            '/forced-labor',
+            '/tax-strategy',
+            '/uk-tax',
+            '/compliance',
+            '/governance',
+            '/investor',
+            '/annual-report',
+            '/sustainability',
+            '/social-responsibility',
+            '/csr',
+            '/ethics',
+            '/code-of-conduct',
+            '/supplier-code',
+            '/human-rights',
+            '/diversity',
+            '/environmental',
+            '/carbon',
+            # 一般的なサイト機能
+            '/contact',
+            '/about',
+            '/careers',
+            '/jobs',
+            '/news',
+            '/press',
+            '/events',
+            '/training',
+            '/support',
+            '/help',
+            '/feedback',
+            '/search',
+            '/login',
+            '/register',
+            '/profile',
+            '/account',
+            '/settings',
+            '/language',
+            '/locale',
+            # ナビゲーション
+            '/sitemap',
+            '/navigation',
+            '/menu',
+            '/breadcrumb',
+            # プライバシー関連
+            '/privacy',
+            '/terms',
+            '/legal',
+            '/cookie',
+            '/disclaimer',
+            '/copyright'
+        ]
+        
+        # URLパターンをチェック
+        for pattern in excluded_url_patterns:
+            if pattern in url_lower:
+                return True
+        
+        # PDFやHTMLファイル以外のファイル形式を除外
+        excluded_extensions = [
+            '.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico',
+            '.zip', '.tar', '.gz', '.xml', '.json', '.csv', '.txt'
+        ]
+        
+        for ext in excluded_extensions:
+            if url_lower.endswith(ext):
+                return True
+        
+        # 短すぎるURLを除外
+        if len(url) < 20:
+            return True
+        
+        return False

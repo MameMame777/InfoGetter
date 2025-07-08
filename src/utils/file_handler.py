@@ -82,15 +82,22 @@ class FileHandler:
         }
         
         for source_name, documents in results.items():
-            source_info = {
-                'document_count': len(documents),
-                'documents': [doc.model_dump() for doc in documents]
-            }
+            source_info = {}
             
             # 検索URLを追加（最初のドキュメントから取得）
             if documents and documents[0].search_url:
                 source_info['search_url'] = documents[0].search_url
             
+            source_info['document_count'] = len(documents)
+            
+            # ドキュメントリストを作成（検索URLを除外）
+            documents_list = []
+            for doc in documents:
+                doc_dict = doc.to_dict()
+                doc_dict.pop('search_url', None)  # 各ドキュメントから検索URLを削除
+                documents_list.append(doc_dict)
+            
+            source_info['documents'] = documents_list
             json_results['sources'][source_name] = source_info
         
         return json_results
