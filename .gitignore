@@ -19,3 +19,11 @@ src/scrapers/__pycache__/altera_scraper.cpython-310.pyc
 src/scrapers/__pycache__/xilinx_scraper.cpython-310.pyc
 src/utils/__pycache__/file_handler.cpython-310.pyc
 src/__pycache__/main.cpython-310.pyc
+results/fpga_documents.json
+results/fpga_documents.json.backup_20250709_064947
+results/fpga_documents.json.backup_20250709_065127
+results/fpga_documents.json.backup_20250709_070012
+results/fpga_documents.json.backup_20250709_070733
+results/fpga_documents.json
+src/scrapers/__pycache__/altera_scraper.cpython-310.pyc
+src/scrapers/__pycache__/xilinx_scraper.cpython-310.pyc
