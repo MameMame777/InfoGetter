@@ -8,3 +8,4 @@ src/__pycache__/
 src/scrapers/
 config/email_credentials.yaml
 config/recipients.yaml
+results/fpga_documents.json

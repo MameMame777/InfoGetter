@@ -1,6 +1,6 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-09T07:07:33.663090",
+    "timestamp": "2025-07-09T20:51:09.499136",
     "total_sources": 2,
     "total_documents": 15
   },
@@ -142,8 +142,8 @@
           "api_metadata": null
         },
         {
-          "name": "Quartus® Prime Pro Edition User Guide: Power Analysis and Optimization",
-          "url": "https://www.intel.com/content/www/us/en/docs/programmable/683174/25-1.html",
+          "name": "Quartus® Prime Pro Edition User Guide: Third-party Simulation",
+          "url": "https://www.intel.com/content/www/us/en/docs/programmable/683870/25-1.html",
           "source": "altera",
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
