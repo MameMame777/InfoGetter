@@ -1,8 +1,8 @@
 {
   "scan_info": {
-    "timestamp": "2025-07-09T20:51:09.499136",
-    "total_sources": 2,
-    "total_documents": 15
+    "timestamp": "2025-07-10T00:08:55.782512",
+    "total_sources": 3,
+    "total_documents": 35
   },
   "sources": {
     "xilinx": {
@@ -16,6 +16,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "Document",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -25,6 +26,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "Document",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -34,6 +36,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "Document",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -43,6 +46,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "Document",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -52,6 +56,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "Document",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         }
       ]
@@ -67,6 +72,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "DSP",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -76,6 +82,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -85,6 +92,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -94,6 +102,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -103,6 +112,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "IP Core",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -112,6 +122,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "IP Core",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -121,6 +132,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -130,6 +142,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -139,6 +152,7 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "Document",
           "file_type": "html",
+          "abstract": null,
           "api_metadata": null
         },
         {
@@ -148,6 +162,213 @@
           "source_type": "DataSourceType.WEB_SCRAPING",
           "category": "User Guide",
           "file_type": "html",
+          "abstract": null,
+          "api_metadata": null
+        }
+      ]
+    },
+    "arxiv": {
+      "search_url": "http://export.arxiv.org/api/query?search_query=cat:cs.AR",
+      "document_count": 20,
+      "documents": [
+        {
+          "name": "PrefixAgent: An LLM-Powered Design Framework for Efficient Prefix Adder\n  Optimization",
+          "url": "http://arxiv.org/abs/2507.06127v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Prefix adders are fundamental arithmetic circuits, but their design space\ngrows exponentially with bit-width, posing significant optimization challenges.\nPrevious works face limitations in performance, generalization, and\nscalability. To address these challenges, we propose PrefixAgent, a large\nlanguage model (LLM)-powered framework that enables efficient prefix adder\noptimization. Specifically, PrefixAgent reformulates the problem into subtasks\nincluding backbone synthesis and structure refinement, which effectively\nreduces the search space. More importantly, this new design perspective enables\nus to efficiently collect enormous high-quality data and reasoning traces with\nE-graph, which further results in an effective fine-tuning of LLM. Experimental\nresults show that PrefixAgent synthesizes prefix adders with consistently\nsmaller areas compared to baseline methods, while maintaining scalability and\ngeneralization in commercial EDA flows.",
+          "api_metadata": null
+        },
+        {
+          "name": "RTGPU: Real-Time Computing with Graphics Processing Units",
+          "url": "http://arxiv.org/abs/2507.06069v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "In this work, we survey the role of GPUs in real-time systems. Originally\ndesigned for parallel graphics workloads, GPUs are now widely used in\ntime-critical applications such as machine learning, autonomous vehicles, and\nrobotics due to their high computational throughput. Their parallel\narchitecture is well-suited for accelerating complex tasks under strict timing\nconstraints. However, their integration into real-time systems presents several\nchallenges, including non-preemptive execution, execution time variability, and\nresource contention; factors that can lead to unpredictable delays and deadline\nviolations. We examine existing solutions that address these challenges,\nincluding scheduling algorithms, resource management techniques, and\nsynchronization methods, and highlight open research directions to improve GPU\npredictability and performance in real-time environments.",
+          "api_metadata": null
+        },
+        {
+          "name": "OLAF: Programmable Data Plane Acceleration for Asynchronous Distributed\n  Reinforcement Learning",
+          "url": "http://arxiv.org/abs/2507.05876v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Asynchronous Distributed Reinforcement Learning (DRL) can suffer from\ndegraded convergence when model updates become stale, often the result of\nnetwork congestion and packet loss during large-scale training. This work\nintroduces a network data-plane acceleration architecture that mitigates such\nstaleness by enabling inline processing of DRL model updates as they traverse\nthe accelerator engine. To this end, we design and prototype a novel queueing\nmechanism that opportunistically combines compatible updates sharing a network\nelement, reducing redundant traffic and preserving update utility.\nComplementing this we provide a lightweight transmission control mechanism at\nthe worker nodes that is guided by feedback from the in-network accelerator. To\nassess model utility at line rate, we introduce the Age-of-Model (AoM) metric\nas a proxy for staleness and verify global fairness and responsiveness\nproperties using a formal verification method. Our evaluations demonstrate that\nthis architecture significantly reduces update staleness and congestion,\nultimately improving the convergence rate in asynchronous DRL workloads.",
+          "api_metadata": null
+        },
+        {
+          "name": "GATMesh: Clock Mesh Timing Analysis using Graph Neural Networks",
+          "url": "http://arxiv.org/abs/2507.05681v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Clock meshes are essential in high-performance VLSI systems for minimizing\nskew and handling PVT variations, but analyzing them is difficult due to\nreconvergent paths, multi-source driving, and input mesh buffer skew. SPICE\nsimulations are accurate but slow; yet simplified models miss key effects like\nslew and input skew. We propose GATMesh, a Graph Neural Network (GNN)-based\nframework that models the clock mesh as a graph with augmented structural and\nphysical features. Trained on SPICE data, GATMesh achieves high accuracy with\naverage delay error of 5.27ps on unseen benchmarks, while achieving speed-ups\nof 47146x over multi-threaded SPICE simulation.",
+          "api_metadata": null
+        },
+        {
+          "name": "A Runtime-Adaptive Transformer Neural Network Accelerator on FPGAs",
+          "url": "http://arxiv.org/abs/2411.18148v3",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Transformer neural networks (TNN) excel in natural language processing (NLP),\nmachine translation, and computer vision (CV) without relying on recurrent or\nconvolutional layers. However, they have high computational and memory demands,\nparticularly on resource-constrained devices like FPGAs. Moreover, transformer\nmodels vary in processing time across applications, requiring custom models\nwith specific parameters. Designing custom accelerators for each model is\ncomplex and time-intensive. Some custom accelerators exist with no runtime\nadaptability, and they often rely on sparse matrices to reduce latency.\nHowever, hardware designs become more challenging due to the need for\napplication-specific sparsity patterns. This paper introduces ADAPTOR, a\nruntime-adaptive accelerator for dense matrix computations in transformer\nencoders and decoders on FPGAs. ADAPTOR enhances the utilization of processing\nelements and on-chip memory, enhancing parallelism and reducing latency. It\nincorporates efficient matrix tiling to distribute resources across FPGA\nplatforms and is fully quantized for computational efficiency and portability.\nEvaluations on Xilinx Alveo U55C data center cards and embedded platforms like\nVC707 and ZCU102 show that our design is 1.2$\\times$ and 2.87$\\times$ more\npower efficient than the NVIDIA K80 GPU and the i7-8700K CPU respectively.\nAdditionally, it achieves a speedup of 1.7 to 2.25$\\times$ compared to some\nstate-of-the-art FPGA-based accelerators.",
+          "api_metadata": null
+        },
+        {
+          "name": "iThermTroj: Exploiting Intermittent Thermal Trojans in Multi-Processor\n  System-on-Chips",
+          "url": "http://arxiv.org/abs/2507.05576v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Thermal Trojan attacks present a pressing concern for the security and\nreliability of System-on-Chips (SoCs), especially in mobile applications. The\nsituation becomes more complicated when such attacks are more evasive and\noperate sporadically to stay hidden from detection mechanisms. In this paper,\nwe introduce Intermittent Thermal Trojans (iThermTroj) that exploit the chips'\nthermal information in a random time-triggered manner. According to our\nexperiments, iThermTroj attack can easily bypass available threshold-based\nthermal Trojan detection solutions. We investigate SoC vulnerabilities to\nvariations of iThermTroj through an in-depth analysis of Trojan activation and\nduration scenarios. We also propose a set of tiny Machine Learning classifiers\nfor run-time anomaly detection to protect SoCs against such intermittent\nthermal Trojan attacks. Compared to existing methods, our approach improves the\nattack detection rate by 29.4\\%, 17.2\\%, and 14.3\\% in scenarios where\niThermTroj manipulates up to 80\\%, 60\\%, and 40\\% of SoC's thermal data,\nrespectively. Additionally, our method increases the full protection resolution\nto 0.8 degrees Celsius, meaning that any temperature manipulations exceeding\n$\\pm 0.8$ degrees will be detected with 100\\% accuracy.",
+          "api_metadata": null
+        },
+        {
+          "name": "Per-Row Activation Counting on Real Hardware: Demystifying Performance\n  Overheads",
+          "url": "http://arxiv.org/abs/2507.05556v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Per-Row Activation Counting (PRAC), a DRAM read disturbance mitigation\nmethod, modifies key DRAM timing parameters, reportedly causing significant\nperformance overheads in simulator-based studies. However, given known\ndiscrepancies between simulators and real hardware, real-machine experiments\nare vital for accurate PRAC performance estimation. We present the first\nreal-machine performance analysis of PRAC. After verifying timing modifications\non the latest CPUs using microbenchmarks, our analysis shows that PRAC's\naverage and maximum overheads are just 1.06% and 3.28% for the SPEC CPU2017\nworkloads -- up to 9.15x lower than simulator-based reports. Further, we show\nthat the close page policy minimizes this overhead by effectively hiding the\nelongated DRAM row precharge operations due to PRAC from the critical path.",
+          "api_metadata": null
+        },
+        {
+          "name": "Bit-Flip Fault Attack: Crushing Graph Neural Networks via Gradual Bit\n  Search",
+          "url": "http://arxiv.org/abs/2507.05531v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Graph Neural Networks (GNNs) have emerged as a powerful machine learning\nmethod for graph-structured data. A plethora of hardware accelerators has been\nintroduced to meet the performance demands of GNNs in real-world applications.\nHowever, security challenges of hardware-based attacks have been generally\noverlooked. In this paper, we investigate the vulnerability of GNN models to\nhardware-based fault attack, wherein an attacker attempts to misclassify output\nby modifying trained weight parameters through fault injection in a memory\ndevice. Thus, we propose Gradual Bit-Flip Fault Attack (GBFA), a layer-aware\nbit-flip fault attack, selecting a vulnerable bit in each selected weight\ngradually to compromise the GNN's performance by flipping a minimal number of\nbits. To achieve this, GBFA operates in two steps. First, a Markov model is\ncreated to predict the execution sequence of layers based on features extracted\nfrom memory access patterns, enabling the launch of the attack within a\nspecific layer. Subsequently, GBFA identifies vulnerable bits within the\nselected weights using gradient ranking through an in-layer search. We evaluate\nthe effectiveness of the proposed GBFA attack on various GNN models for node\nclassification tasks using the Cora and PubMed datasets. Our findings show that\nGBFA significantly degrades prediction accuracy, and the variation in its\nimpact across different layers highlights the importance of adopting a\nlayer-aware attack strategy in GNNs. For example, GBFA degrades GraphSAGE's\nprediction accuracy by 17% on the Cora dataset with only a single bit flip in\nthe last layer.",
+          "api_metadata": null
+        },
+        {
+          "name": "ViPSN 2.0: A Reconfigurable Battery-free IoT Platform for Vibration\n  Energy Harvesting",
+          "url": "http://arxiv.org/abs/2507.05081v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Vibration energy harvesting is a promising solution for powering battery-free\nIoT systems; however, the instability of ambient vibrations presents\nsignificant challenges, such as limited harvested energy, intermittent power\nsupply, and poor adaptability to various applications. To address these\nchallenges, this paper proposes ViPSN2.0, a modular and reconfigurable IoT\nplatform that supports multiple vibration energy harvesters (piezoelectric,\nelectromagnetic, and triboelectric) and accommodates sensing tasks with varying\napplication requirements through standardized hot-swappable interfaces.\nViPSN~2.0 incorporates an energy-indication power management framework tailored\nto various application demands, including light-duty discrete sampling,\nheavy-duty high-power sensing, and complex-duty streaming tasks, thereby\neffectively managing fluctuating energy availability. The platform's\nversatility and robustness are validated through three representative\napplications: ViPSN-Beacon, enabling ultra-low-power wireless beacon\ntransmission from a single transient fingertip press; ViPSN-LoRa, supporting\nhigh-power, long-range wireless communication powered by wave vibrations in\nactual marine environments; and ViPSN-Cam, enabling intermittent image capture\nand wireless transfer. Experimental results demonstrate that ViPSN~2.0 can\nreliably meet a wide range of requirements in practical battery-free IoT\ndeployments under energy-constrained conditions.",
+          "api_metadata": null
+        },
+        {
+          "name": "Optimizing Scalable Multi-Cluster Architectures for Next-Generation\n  Wireless Sensing and Communication",
+          "url": "http://arxiv.org/abs/2507.05012v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AR",
+          "file_type": null,
+          "abstract": "Next-generation wireless technologies (for immersive-massive communication,\njoint communication and sensing) demand highly parallel architectures for\nmassive data processing. A common architectural template scales up by grouping\ntens to hundreds of cores into shared-memory clusters, which are then scaled\nout as multi-cluster manycore systems. This hierarchical design, used in GPUs\nand accelerators, requires a balancing act between fewer large clusters and\nmore smaller clusters, affecting design complexity, synchronization,\ncommunication efficiency, and programmability. While all multi-cluster\narchitectures must balance these trade-offs, there is limited insight into\noptimal cluster sizes. This paper analyzes various cluster configurations,\nfocusing on synchronization, data movement overhead, and programmability for\ntypical wireless sensing and communication workloads. We extend the open-source\nshared-memory cluster MemPool into a multi-cluster architecture and propose a\nnovel double-buffering barrier that decouples processor and DMA. Our results\nshow a single 256-core cluster can be twice as fast as 16 16-core clusters for\nmemory-bound kernels and up to 24% faster for compute-bound kernels due to\nreduced synchronization and communication overheads.",
+          "api_metadata": null
+        },
+        {
+          "name": "Agent KB: Leveraging Cross-Domain Experience for Agentic Problem Solving",
+          "url": "http://arxiv.org/abs/2507.06229v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "As language agents tackle increasingly complex tasks, they struggle with\neffective error correction and experience reuse across domains. We introduce\nAgent KB, a hierarchical experience framework that enables complex agentic\nproblem solving via a novel Reason-Retrieve-Refine pipeline. Agent KB addresses\na core limitation: agents traditionally cannot learn from each other's\nexperiences. By capturing both high-level strategies and detailed execution\nlogs, Agent KB creates a shared knowledge base that enables cross-agent\nknowledge transfer. Evaluated on the GAIA benchmark, Agent KB improves success\nrates by up to 16.28 percentage points. On the most challenging tasks, Claude-3\nimproves from 38.46% to 57.69%, while GPT-4 improves from 53.49% to 73.26% on\nintermediate tasks. On SWE-bench code repair, Agent KB enables Claude-3 to\nimprove from 41.33% to 53.33%. Our results suggest that Agent KB provides a\nmodular, framework-agnostic infrastructure for enabling agents to learn from\npast experiences and generalize successful strategies to new tasks.",
+          "api_metadata": null
+        },
+        {
+          "name": "EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled\n  Videos via Embodiment-Centric Flow",
+          "url": "http://arxiv.org/abs/2507.06224v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Current language-guided robotic manipulation systems often require low-level\naction-labeled datasets for imitation learning. While object-centric flow\nprediction methods mitigate this issue, they remain limited to scenarios\ninvolving rigid objects with clear displacement and minimal occlusion. In this\nwork, we present Embodiment-Centric Flow (EC-Flow), a framework that directly\nlearns manipulation from action-unlabeled videos by predicting\nembodiment-centric flow. Our key insight is that incorporating the embodiment's\ninherent kinematics significantly enhances generalization to versatile\nmanipulation scenarios, including deformable object handling, occlusions, and\nnon-object-displacement tasks. To connect the EC-Flow with language\ninstructions and object interactions, we further introduce a goal-alignment\nmodule by jointly optimizing movement consistency and goal-image prediction.\nMoreover, translating EC-Flow to executable robot actions only requires a\nstandard robot URDF (Unified Robot Description Format) file to specify\nkinematic constraints across joints, which makes it easy to use in practice. We\nvalidate EC-Flow on both simulation (Meta-World) and real-world tasks,\ndemonstrating its state-of-the-art performance in occluded object handling (62%\nimprovement), deformable object manipulation (45% improvement), and\nnon-object-displacement tasks (80% improvement) than prior state-of-the-art\nobject-centric flow methods. For more information, see our project website at\nhttps://ec-flow1.github.io .",
+          "api_metadata": null
+        },
+        {
+          "name": "Efficiency-Effectiveness Reranking FLOPs for LLM-based Rerankers",
+          "url": "http://arxiv.org/abs/2507.06223v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Large Language Models (LLMs) have recently been applied to reranking tasks in\ninformation retrieval, achieving strong performance. However, their high\ncomputational demands often hinder practical deployment. Existing studies\nevaluate the efficiency of LLM-based rerankers using proxy metrics such as\nlatency, the number of forward passes, input tokens, and output tokens.\nHowever, these metrics depend on hardware and running-time choices (\\eg\nparallel or not, batch size, etc), and often fail to account for model size,\nmaking it difficult to interpret and obscuring the evaluation of the\nefficiency-effectiveness tradeoff. To address this issue, we propose\nE\\textsuperscript{2}R-FLOPs, for LLM-based rerankers: ranking metrics per\nPetaFLOP (RPP) for relevance per compute and queries per PetaFLOP (QPP) for\nhardware-agnostic throughput. Companied with the new metrics, an interpretable\nFLOPs estimator is built to estimate the FLOPs of an LLM-based reranker even\nwithout running any experiments. Based on the proposed metrics, we conduct\ncomprehensive experiments to evaluate a wide range of LLM-based rerankers with\ndifferent architecture, studying the efficiency-effectiveness trade-off and\nbringing this issue to the attention of the research community.",
+          "api_metadata": null
+        },
+        {
+          "name": "Aligned Textual Scoring Rules",
+          "url": "http://arxiv.org/abs/2507.06221v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Scoring rules elicit probabilistic predictions from a strategic agent by\nscoring the prediction against a ground truth state. A scoring rule is proper\nif, from the agent's perspective, reporting the true belief maximizes the\nexpected score. With the development of language models, Wu and Hartline (2024)\nproposes a reduction from textual information elicitation to the numerical\n(i.e. probabilistic) information elicitation problem, which achieves provable\nproperness for textual elicitation. However, not all proper scoring rules are\nwell aligned with human preference over text. Our paper designs the Aligned\nScoring rule (ASR) for text by optimizing and minimizing the mean squared error\nbetween a proper scoring rule and a reference score (e.g. human score). Our\nexperiments show that our ASR outperforms previous methods in aligning with\nhuman preference while maintaining properness.",
+          "api_metadata": null
+        },
+        {
+          "name": "Is Diversity All You Need for Scalable Robotic Manipulation?",
+          "url": "http://arxiv.org/abs/2507.06219v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Data scaling has driven remarkable success in foundation models for Natural\nLanguage Processing (NLP) and Computer Vision (CV), yet the principles of\neffective data scaling in robotic manipulation remain insufficiently\nunderstood. In this work, we investigate the nuanced role of data diversity in\nrobot learning by examining three critical dimensions-task (what to do),\nembodiment (which robot to use), and expert (who demonstrates)-challenging the\nconventional intuition of \"more diverse is better\". Throughout extensive\nexperiments on various robot platforms, we reveal that (1) task diversity\nproves more critical than per-task demonstration quantity, benefiting transfer\nfrom diverse pre-training tasks to novel downstream scenarios; (2)\nmulti-embodiment pre-training data is optional for cross-embodiment\ntransfer-models trained on high-quality single-embodiment data can efficiently\ntransfer to different platforms, showing more desirable scaling property during\nfine-tuning than multi-embodiment pre-trained models; and (3) expert diversity,\narising from individual operational preferences and stochastic variations in\nhuman demonstrations, can be confounding to policy learning, with velocity\nmultimodality emerging as a key contributing factor. Based on this insight, we\npropose a distribution debiasing method to mitigate velocity ambiguity, the\nyielding GO-1-Pro achieves substantial performance gains of 15%, equivalent to\nusing 2.5 times pre-training data. Collectively, these findings provide new\nperspectives and offer practical guidance on how to scale robotic manipulation\ndatasets effectively.",
+          "api_metadata": null
+        },
+        {
+          "name": "Instruction Following by Boosting Attention of Large Language Models",
+          "url": "http://arxiv.org/abs/2506.13734v2",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Controlling the generation of large language models (LLMs) remains a central\nchallenge to ensure their safe and reliable deployment. While prompt\nengineering and finetuning are common approaches, recent work has explored\nlatent steering, a lightweight technique that alters LLM internal activations\nto guide generation. However, subsequent studies revealed latent steering's\neffectiveness to be limited, often underperforming simple instruction\nprompting. To address this limitation, we first establish a benchmark across\ndiverse behaviors for standardized evaluation of steering techniques. Building\non insights from this benchmark, we introduce Instruction Attention Boosting\n(InstABoost), a latent steering method that boosts the strength of instruction\nprompting by altering the model's attention during generation. InstABoost\ncombines the strengths of existing approaches and is theoretically supported by\nprior work that suggests that in-context rule following in transformer-based\nmodels can be controlled by manipulating attention on instructions.\nEmpirically, InstABoost demonstrates superior control success compared to both\ntraditional prompting and latent steering.",
+          "api_metadata": null
+        },
+        {
+          "name": "Identifiability in Causal Abstractions: A Hierarchy of Criteria",
+          "url": "http://arxiv.org/abs/2507.06213v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Identifying the effect of a treatment from observational data typically\nrequires assuming a fully specified causal diagram. However, such diagrams are\nrarely known in practice, especially in complex or high-dimensional settings.\nTo overcome this limitation, recent works have explored the use of causal\nabstractions-simplified representations that retain partial causal information.\nIn this paper, we consider causal abstractions formalized as collections of\ncausal diagrams, and focus on the identifiability of causal queries within such\ncollections. We introduce and formalize several identifiability criteria under\nthis setting. Our main contribution is to organize these criteria into a\nstructured hierarchy, highlighting their relationships. This hierarchical view\nenables a clearer understanding of what can be identified under varying levels\nof causal knowledge. We illustrate our framework through examples from the\nliterature and provide tools to reason about identifiability when full causal\nknowledge is unavailable.",
+          "api_metadata": null
+        },
+        {
+          "name": "EEG2TEXT-CN: An Exploratory Study of Open-Vocabulary Chinese Text-EEG\n  Alignment via Large Language Model and Contrastive Learning on ChineseEEG",
+          "url": "http://arxiv.org/abs/2506.00854v3",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "We propose EEG2TEXT-CN, which, to the best of our knowledge, represents one\nof the earliest open-vocabulary EEG-to-text generation frameworks tailored for\nChinese. Built on a biologically grounded EEG encoder (NICE-EEG) and a compact\npretrained language model (MiniLM), our architecture aligns multichannel brain\nsignals with natural language representations via masked pretraining and\ncontrastive learning. Using a subset of the ChineseEEG dataset, where each\nsentence contains approximately ten Chinese characters aligned with 128-channel\nEEG recorded at 256 Hz, we segment EEG into per-character embeddings and\npredict full sentences in a zero-shot setting. The decoder is trained with\nteacher forcing and padding masks to accommodate variable-length sequences.\nEvaluation on over 1,500 training-validation sentences and 300 held-out test\nsamples shows promising lexical alignment, with a best BLEU-1 score of 6.38\\%.\nWhile syntactic fluency remains a challenge, our findings demonstrate the\nfeasibility of non-phonetic, cross-modal language decoding from EEG. This work\nopens a new direction in multilingual brain-to-text research and lays the\nfoundation for future cognitive-language interfaces in Chinese.",
+          "api_metadata": null
+        },
+        {
+          "name": "Differential Mamba",
+          "url": "http://arxiv.org/abs/2507.06204v1",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "Sequence models like Transformers and RNNs often overallocate attention to\nirrelevant context, leading to noisy intermediate representations. This\ndegrades LLM capabilities by promoting hallucinations, weakening long-range and\nretrieval abilities, and reducing robustness. Recent work has shown that\ndifferential design can mitigate this issue in Transformers, improving their\neffectiveness across various applications. In this paper, we explore whether\nthese techniques, originally developed for Transformers, can be applied to\nMamba, a recent architecture based on selective state-space layers that\nachieves Transformer-level performance with greater efficiency. We show that a\nnaive adaptation of differential design to Mamba is insufficient and requires\ncareful architectural modifications. To address this, we introduce a novel\ndifferential mechanism for Mamba, empirically validated on language modeling\nbenchmarks, demonstrating improved retrieval capabilities and superior\nperformance over vanilla Mamba. Finally, we conduct extensive ablation studies\nand empirical analyses to justify our design choices and provide evidence that\nour approach effectively mitigates the overallocation problem in Mamba-based\nmodels. Our code is publicly available.",
+          "api_metadata": null
+        },
+        {
+          "name": "Dynamic Context-Aware Prompt Recommendation for Domain-Specific AI\n  Applications",
+          "url": "http://arxiv.org/abs/2506.20815v2",
+          "source": "arxiv",
+          "source_type": "DataSourceType.API",
+          "category": "cs.AI",
+          "file_type": null,
+          "abstract": "LLM-powered applications are highly susceptible to the quality of user\nprompts, and crafting high-quality prompts can often be challenging especially\nfor domain-specific applications. This paper presents a novel dynamic\ncontext-aware prompt recommendation system for domain-specific AI applications.\nOur solution combines contextual query analysis, retrieval-augmented knowledge\ngrounding, hierarchical skill organization, and adaptive skill ranking to\ngenerate relevant and actionable prompt suggestions.\n  The system leverages behavioral telemetry and a two-stage hierarchical\nreasoning process to dynamically select and rank relevant skills, and\nsynthesizes prompts using both predefined and adaptive templates enhanced with\nfew-shot learning. Experiments on real-world datasets demonstrate that our\napproach achieves high usefulness and relevance, as validated by both automated\nand expert evaluations.",
           "api_metadata": null
         }
       ]

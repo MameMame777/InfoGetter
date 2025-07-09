@@ -49,10 +49,10 @@ notifications:
   email:
     enabled: true
     smtp_server: "smtp.gmail.com"
-    sender_email: "your_email@gmail.com"
-    sender_password: "your_app_password"
+    sender_email: "NAME@gmail.com"
+    sender_password: "NAME_app_password"
     recipients:
-      - "recipient@example.com"
+      - "NAME@example.com"
 ```
 
 ## 使用方法
@@ -141,11 +141,11 @@ data_sources:
 
 # config/email_credentials.yaml
 email:
-  sender: "mail@gmail.com"
+  sender: "NAME@gmail.com"
   password: "password"  # アプリパスワードを使用することを推奨
 # config/recipients.yaml
 recipients:
-  - "recipient@outlook.jp"
+  - "NAME@outlook.jp"
 
 ```
 

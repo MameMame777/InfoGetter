@@ -165,7 +165,7 @@ notifications:
   email:
     enabled: true
     smtp_server: "smtp.gmail.com"
-    sender_password: "your_password"  # 環境変数推奨
+    sender_password: "NAME_password"  # 環境変数推奨
 ```
 
 **学んだこと**：

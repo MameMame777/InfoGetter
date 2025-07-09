@@ -4,9 +4,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from typing import List
 import time
 import re
@@ -37,25 +40,96 @@ class AlteraScraper(BaseScraper):
         
         return self.validate_data(documents)
     
-    def _scrape_with_selenium(self) -> List[Document]:
-        """Seleniumでスクレイピング"""
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--window-size=1920,1080')
-        chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        chrome_options.add_experimental_option('useAutomationExtension', False)
-        chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+    def _create_webdriver(self):
+        """設定に基づいてWebDriverを作成"""
+        browser_type = self.config.get('browser', {}).get('type', 'chrome').lower()
+        headless = self.config.get('browser', {}).get('headless', True)
         
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=chrome_options)
+        self.logger.info(f"Creating WebDriver: {browser_type} (headless: {headless})")
         
+        if browser_type == 'firefox':
+            return self._create_firefox_driver(headless)
+        else:
+            return self._create_chrome_driver(headless)
+    
+    def _create_chrome_driver(self, headless=True):
+        """Chrome WebDriverを作成"""
         try:
+            chrome_options = ChromeOptions()
+            
+            if headless:
+                chrome_options.add_argument('--headless')
+            
+            chrome_options.add_argument('--no-sandbox')
+            chrome_options.add_argument('--disable-dev-shm-usage')
+            chrome_options.add_argument('--disable-gpu')
+            chrome_options.add_argument('--window-size=1920,1080')
+            chrome_options.add_argument('--disable-blink-features=AutomationControlled')
+            chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+            chrome_options.add_experimental_option('useAutomationExtension', False)
+            chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
+            
+            # カスタムパスの確認
+            custom_path = self.config.get('browser', {}).get('chromedriver_path')
+            if custom_path and os.path.exists(custom_path):
+                self.logger.info(f"Using custom ChromeDriver: {custom_path}")
+                service = ChromeService(custom_path)
+            else:
+                service = ChromeService(ChromeDriverManager().install())
+            
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+            
             # User-Agentを設定
             driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            
+            return driver
+            
+        except Exception as e:
+            self.logger.error(f"Chrome WebDriver作成エラー: {e}")
+            raise
+    
+    def _create_firefox_driver(self, headless=True):
+        """Firefox WebDriverを作成"""
+        try:
+            firefox_options = FirefoxOptions()
+            
+            if headless:
+                firefox_options.add_argument('--headless')
+            
+            firefox_options.add_argument('--no-sandbox')
+            firefox_options.add_argument('--disable-dev-shm-usage')
+            firefox_options.add_argument('--disable-extensions')
+            
+            # User-Agentの設定
+            firefox_options.set_preference("general.useragent.override", 
+                                         "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/109.0")
+            
+            # カスタムパスの確認
+            custom_path = self.config.get('browser', {}).get('geckodriver_path')
+            if custom_path and os.path.exists(custom_path):
+                self.logger.info(f"Using custom GeckoDriver: {custom_path}")
+                service = FirefoxService(custom_path)
+            else:
+                service = FirefoxService(GeckoDriverManager().install())
+            
+            driver = webdriver.Firefox(service=service, options=firefox_options)
+            
+            # タイムアウト設定
+            driver.set_page_load_timeout(30)
+            driver.implicitly_wait(10)
+            
+            return driver
+            
+        except Exception as e:
+            self.logger.error(f"Firefox WebDriver作成エラー: {e}")
+            raise
+    
+    def _scrape_with_selenium(self) -> List[Document]:
+        """Seleniumでスクレイピング"""
+        driver = None
+        
+        try:
+            driver = self._create_webdriver()
             
             url = self._build_search_url()  # 設定から動的にURLを構築
             self.logger.info(f"Accessing Altera search URL: {url}")
@@ -83,7 +157,8 @@ class AlteraScraper(BaseScraper):
             self.logger.error(f"Selenium scraping error: {e}")
             return []
         finally:
-            driver.quit()
+            if driver:
+                driver.quit()
     
     def _parse_altera_results(self, soup: BeautifulSoup, search_url: str, seen_urls: set = None) -> List[Document]:
         """Alteraの検索結果をパース"""

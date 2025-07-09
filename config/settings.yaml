@@ -11,6 +11,12 @@ data_sources:
     scroll_delay: 2   # スクロール後の待機時間（秒）
     page_load_timeout: 30  # ページ読み込みタイムアウト（秒）
     element_wait_timeout: 10  # 要素待機タイムアウト（秒）
+    # ブラウザー設定
+    browser:
+      type: "chrome"  # "chrome" または "firefox"
+      headless: true
+      # chromedriver_path: "C:/path/to/chromedriver.exe"  # 手動パス指定
+      # geckodriver_path: "C:/path/to/geckodriver.exe"    # 手動パス指定
     search_params:
       query: "DSP"  # URLの query= パラメータと一致
       document_types: ["Data Sheet", "User Guides & Manuals"]
@@ -30,6 +36,12 @@ data_sources:
     scroll_delay: 2   # スクロール後の待機時間（秒）
     page_load_timeout: 30  # ページ読み込みタイムアウト（秒）
     element_wait_timeout: 10  # 要素待機タイムアウト（秒）
+    # ブラウザー設定
+    browser:
+      type: "firefox"  # "chrome" または "firefox"
+      headless: true
+      # chromedriver_path: "C:/path/to/chromedriver.exe"  # 手動パス指定
+      # geckodriver_path: "C:/path/to/geckodriver.exe"    # 手動パス指定
     search_params:
       query: "DSP"  # URLの q= パラメータと一致
       sort: "Relevancy"
@@ -44,6 +56,25 @@ data_sources:
     enable_diff: true  # 差分取得機能を有効化
     sort_by: "lastUpdatedDate"
     sort_order: "descending"
+
+# デフォルトブラウザー設定（グローバル）
+default_browser:
+  type: "chrome"  # "chrome" または "firefox"
+  headless: true
+  options:
+    chrome:
+      - "--no-sandbox"
+      - "--disable-dev-shm-usage"
+      - "--disable-gpu"
+      - "--window-size=1920,1080"
+      - "--disable-blink-features=AutomationControlled"
+    firefox:
+      - "--no-sandbox"
+      - "--disable-dev-shm-usage"
+      - "--disable-extensions"
+  # カスタムドライバーパス（オプション）
+  # chromedriver_path: "C:/path/to/chromedriver.exe"
+  # geckodriver_path: "C:/path/to/geckodriver.exe"
 
 # 通知設定
 notifications:
