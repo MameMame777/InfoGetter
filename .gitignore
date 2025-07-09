@@ -30,3 +30,8 @@ src/scrapers/__pycache__/xilinx_scraper.cpython-310.pyc
 
 config/email_credentials.yaml
 config/recipients.yaml
+results/fpga_documents.json
+results/fpga_documents.json
+results/fpga_documents.json.backup_20250709_203316
+results/fpga_documents.json.backup_20250709_205109
+results/fpga_documents.json
