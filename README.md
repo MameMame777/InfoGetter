@@ -108,16 +108,45 @@ data_sources:
 
 ### 通知設定
 
+#### configフォルダ構成
+
+```
+config/
+├── settings.yaml       　　 # メイン設定ファイル
+├── email_credentials.yaml 　# メール送信用の認証情報（.gitignore推奨）
+└── recipients.yaml          # メール受信者リスト　(.gitignore推奨)
+```
+
+設定例：
+
 ```yaml
+# config/settings.yaml
+# 通知設定
 notifications:
   email:
     enabled: true
     smtp_server: "smtp.gmail.com"
     smtp_port: 587
-    sender_email: "your_email@gmail.com"
-    sender_password: "your_app_password"  # 環境変数EMAIL_PASSWORDからも取得可能
-    recipients:
-      - "recipient@example.com"
+    recipients_file: "config/recipients.yaml"
+    credentials_file: "config/email_credentials.yaml"
+
+# config/settings.yaml
+data_sources:
+  xilinx:
+    name: "xilinx"
+    type: "web_scraping"
+    strategy: "selenium"
+    base_url: "https://docs.amd.com/search/all?query=Versal"
+    rate_limit: 2
+
+# config/email_credentials.yaml
+email:
+  sender: "mail@gmail.com"
+  password: "password"  # アプリパスワードを使用することを推奨
+# config/recipients.yaml
+recipients:
+  - "recipient@outlook.jp"
+
 ```
 
 ## 出力形式
