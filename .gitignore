@@ -27,3 +27,5 @@ results/fpga_documents.json.backup_20250709_070733
 results/fpga_documents.json
 src/scrapers/__pycache__/altera_scraper.cpython-310.pyc
 src/scrapers/__pycache__/xilinx_scraper.cpython-310.pyc
+config/email_credentials.yaml
+config/recipients.yaml
