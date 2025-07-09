@@ -9,6 +9,7 @@ from typing import List, Dict, Any
 import json
 from datetime import datetime
 import sys
+import yaml
 
 # プロジェクトのルートディレクトリをPythonパスに追加
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -27,9 +28,29 @@ class EmailSender:
         # 設定の取得
         self.smtp_server = config.get('smtp_server', 'smtp.gmail.com')
         self.smtp_port = config.get('smtp_port', 587)
-        self.sender_email = os.getenv('EMAIL_SENDER')
-        self.sender_password = os.getenv('EMAIL_PASSWORD')
-        self.recipients = config.get('recipients', [])
+
+        # credentialsを外部ファイルから読み込む
+        credentials_file = config.get('credentials_file')
+        if credentials_file:
+            with open(credentials_file, 'r') as file:
+                credentials = yaml.safe_load(file).get('email', {})
+                self.sender_email = credentials.get('sender')
+                self.sender_password = credentials.get('password')
+        else:
+            self.sender_email = config.get('sender_email')
+            self.sender_password = config.get('sender_password')
+        
+        # recipientsを外部ファイルから読み込む
+        recipients_file = config.get('recipients_file')
+        if recipients_file:
+            try:
+                with open(recipients_file, 'r') as file:
+                    self.recipients = yaml.safe_load(file).get('recipients', [])
+            except Exception as e:
+                self.logger.error(f"Failed to load recipients file: {e}")
+                self.recipients = []
+        else:
+            self.recipients = config.get('recipients', [])
         
     def send_notification(self, results: Dict[str, List[Document]], 
                          json_file_path: str = None) -> bool:

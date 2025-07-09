@@ -40,10 +40,8 @@ notifications:
     enabled: true
     smtp_server: "smtp.gmail.com"
     smtp_port: 587
-    #sender_email: "your_email@gmail.com"
-    #sender_password: "your_password"  # 環境変数から取得することを推奨
-    recipients:
-      - "recipient@example.com"
+    recipients_file: "config/recipients.yaml"
+    credentials_file: "config/email_credentials.yaml"
   
 # 出力設定
 output:
