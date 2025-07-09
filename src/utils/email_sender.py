@@ -27,14 +27,10 @@ class EmailSender:
         # 設定の取得
         self.smtp_server = config.get('smtp_server', 'smtp.gmail.com')
         self.smtp_port = config.get('smtp_port', 587)
-        self.sender_email = config.get('sender_email')
-        self.sender_password = config.get('sender_password')
+        self.sender_email = os.getenv('EMAIL_SENDER')
+        self.sender_password = os.getenv('EMAIL_PASSWORD')
         self.recipients = config.get('recipients', [])
         
-        # 環境変数からパスワードを取得（セキュリティのため）
-        if not self.sender_password:
-            self.sender_password = os.getenv('EMAIL_PASSWORD')
-    
     def send_notification(self, results: Dict[str, List[Document]], 
                          json_file_path: str = None) -> bool:
         """スクレイピング結果をメールで送信"""
