@@ -95,6 +95,10 @@ class EmailSender:
                     body += f"  FPGA Series: {doc.fpga_series}\n"
                 if doc.file_type:
                     body += f"  File Type: {doc.file_type}\n"
+                if doc.abstract:
+                    # アブストラクトが長い場合は短縮
+                    abstract_preview = doc.abstract[:200] + "..." if len(doc.abstract) > 200 else doc.abstract
+                    body += f"  Abstract: {abstract_preview}\n"
                 body += "\n"
         
         body += f"Total Documents Found: {total_documents}\n"

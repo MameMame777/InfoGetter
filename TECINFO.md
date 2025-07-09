@@ -9,6 +9,24 @@ https://docs.amd.com/search/all?query=Versal&value-filters=Document_Type_custom~
 ### Altera Info URL
 https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html?q=DSP&s=Relevancy
 
+### Arxiv Info URL about How to use the API
+get latest papers from arxiv API 
+output the json file with the following structure:
+```json
+{
+  "title": "Machine Learning for Quantum Systems",
+  "abstract": "This paper explores the application of machine learning techniques...",
+  "link": "http://arxiv.org/abs/2507.06127v1"
+}
+```
+https://info.arxiv.org/help/api/index.html
+get cs.AR"  # Hardware Architecture
+get cs.AI"  # Artificial Intelligence
+
+
+### IEEE Info URL
+Metadata Search API
+
 ## operation of this script
 # This script is used to scan the above URLs for FPGA IPs and extract relevant information.
   1. get the HTML/pdf content of the URLs.

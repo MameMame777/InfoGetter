@@ -33,6 +33,17 @@ data_sources:
     search_params:
       query: "DSP"  # URLの q= パラメータと一致
       sort: "Relevancy"
+  
+  arxiv:
+    name: "arxiv"
+    type: "api"
+    base_url: "http://export.arxiv.org/api/query"
+    rate_limit: 1
+    max_results: 10  # 各カテゴリから取得する最大件数
+    categories: ["cs.AR", "cs.AI"]  # Hardware Architecture, Artificial Intelligence
+    enable_diff: true  # 差分取得機能を有効化
+    sort_by: "lastUpdatedDate"
+    sort_order: "descending"
 
 # 通知設定
 notifications:

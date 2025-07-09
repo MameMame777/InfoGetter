@@ -11,6 +11,7 @@ sys.path.insert(0, project_root)
 
 from src.scrapers.xilinx_scraper import XilinxScraper
 from src.scrapers.altera_scraper import AlteraScraper
+from src.scrapers.arxiv_scraper import ArxivScraper
 from src.utils.email_sender import EmailSender
 from src.utils.file_handler import FileHandler
 from src.models.document import Document
@@ -105,11 +106,12 @@ class InfoGatherer:
         
         scraper_classes = {
             'xilinx': XilinxScraper,
-            'altera': AlteraScraper
+            'altera': AlteraScraper,
+            'arxiv': ArxivScraper
         }
         
         for source_name, config in data_sources.items():
-            if config.get('type') == 'web_scraping':
+            if config.get('type') in ['web_scraping', 'api']:
                 scraper_class = scraper_classes.get(source_name)
                 if scraper_class:
                     scrapers[source_name] = scraper_class(config)
