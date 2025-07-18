@@ -9,4 +9,5 @@ config/email_credentials.yaml
 config/recipients.yaml
 results/fpga_documents.json
 diary/2024-01-20.md
+diary/2025-07-18.md
 .gitignore

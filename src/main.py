@@ -3,7 +3,8 @@ import logging
 import os
 import sys
 from typing import Dict, List
-from datetime import datetime
+from datetime import datetime, timedelta
+import glob
 
 # プロジェクトのルートをPythonパスに追加
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +41,69 @@ class InfoGatherer:
         except Exception as e:
             print(f"Warning: Could not clear log file: {e}")
     
+    def _cleanup_old_files(self, days_threshold: int = None):
+        """
+        Clean up files older than specified days from results directory
+        
+        Args:
+            days_threshold: Number of days to keep files (default: from config)
+        """
+        try:
+            # Check if cleanup is enabled
+            cleanup_config = self.config.get('cleanup', {})
+            if not cleanup_config.get('enabled', True):
+                return
+            
+            # Use provided threshold or config value
+            if days_threshold is None:
+                days_threshold = cleanup_config.get('keep_days', 7)
+            
+            # Get results directory path
+            results_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+            
+            if not os.path.exists(results_dir):
+                return
+            
+            # Calculate cutoff date
+            cutoff_date = datetime.now() - timedelta(days=days_threshold)
+            
+            # Get file types to clean from config
+            file_types = cleanup_config.get('file_types', ["*.json", "*.backup_*", "*.log", "*.txt"])
+            
+            # Build file patterns
+            file_patterns = [os.path.join(results_dir, file_type) for file_type in file_types]
+            
+            deleted_files = []
+            
+            for pattern in file_patterns:
+                for file_path in glob.glob(pattern):
+                    try:
+                        # Skip current main files
+                        filename = os.path.basename(file_path)
+                        if filename in ['fpga_documents.json', 'arxiv_recent_papers.json', 'arxiv_previous_papers.json']:
+                            continue
+                            
+                        # Get file modification time
+                        file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
+                        
+                        # Check if file is older than threshold
+                        if file_mtime < cutoff_date:
+                            os.remove(file_path)
+                            deleted_files.append(filename)
+                            
+                    except Exception as e:
+                        print(f"Warning: Could not delete file {file_path}: {e}")
+            
+            if deleted_files:
+                print(f"Cleaned up {len(deleted_files)} old files from results directory (keeping files newer than {days_threshold} days):")
+                for file_name in deleted_files:
+                    print(f"  - {file_name}")
+            else:
+                print(f"No old files found to clean up in results directory (keeping files newer than {days_threshold} days)")
+                
+        except Exception as e:
+            print(f"Warning: Could not cleanup old files: {e}")
+    
     def __init__(self, config_path: str = None):
         """InfoGathererを初期化"""
         # ログファイルを初期化（既存のログを削除）
@@ -51,6 +115,10 @@ class InfoGatherer:
         self.config = self._load_config(config_path)
         self._setup_logging()
         self.logger = logging.getLogger(self.__class__.__name__)
+        
+        # Clean up old files from results directory
+        cleanup_days = self.config.get('cleanup', {}).get('keep_days', 7)
+        self._cleanup_old_files(cleanup_days)
         
         # コンポーネントの初期化
         self.file_handler = FileHandler(self.config.get('output', {}))
@@ -201,12 +269,18 @@ def main():
     parser.add_argument('--sources', nargs='+', help='Sources to scrape (xilinx, altera)')
     parser.add_argument('--no-email', action='store_true', help='Disable email notifications')
     parser.add_argument('--config', help='Configuration file path')
+    parser.add_argument('--no-cleanup', action='store_true', help='Disable cleanup of old files')
+    parser.add_argument('--cleanup-days', type=int, default=7, help='Number of days to keep files (default: 7)')
     
     args = parser.parse_args()
     
     try:
         # InfoGathererを初期化
         gatherer = InfoGatherer(args.config)
+        
+        # Manual cleanup if requested with custom days
+        if not args.no_cleanup and args.cleanup_days != 7:
+            gatherer._cleanup_old_files(args.cleanup_days)
         
         # スクレイピング実行
         results = gatherer.run(

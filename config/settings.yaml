@@ -96,3 +96,9 @@ logging:
   file: "logs/scraper.log"
   max_size: "10MB"
   backup_count: 5
+
+# クリーンアップ設定
+cleanup:
+  keep_days: 7  # 保持する日数（デフォルト：7日）
+  enabled: true  # クリーンアップ機能を有効化
+  file_types: ["*.json", "*.backup_*", "*.log", "*.txt"]  # 削除対象のファイルタイプ
