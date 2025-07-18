@@ -8,3 +8,5 @@ src/__pycache__/
 config/email_credentials.yaml
 config/recipients.yaml
 results/fpga_documents.json
+diary/2024-01-20.md
+.gitignore
