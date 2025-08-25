@@ -5,7 +5,7 @@ data_sources:
     strategy: "selenium"
     base_url: "https://docs.amd.com/search/all"
     rate_limit: 2
-    max_results: 5  # 取得する最大件数
+    max_results: 1  # 取得する最大件数
     scroll_pages: 10   # スクロールするページ数
     load_more_attempts: 5  # 「もっと見る」ボタンのクリック試行回数
     scroll_delay: 2   # スクロール後の待機時間（秒）
@@ -30,7 +30,7 @@ data_sources:
     strategy: "selenium"
     base_url: "https://www.intel.com/content/www/us/en/products/details/fpga/stratix/10/docs.html"
     rate_limit: 2
-    max_results: 10  # 取得する最大件数
+    max_results: 1  # 取得する最大件数
     scroll_pages: 10   # スクロールするページ数
     load_more_attempts: 5  # 「もっと見る」ボタンのクリック試行回数
     scroll_delay: 2   # スクロール後の待機時間（秒）
@@ -51,7 +51,7 @@ data_sources:
     type: "api"
     base_url: "http://export.arxiv.org/api/query"
     rate_limit: 1
-    max_results: 10  # 各カテゴリから取得する最大件数
+    max_results: 1  # 各カテゴリから取得する最大件数
     categories: ["cs.AR", "cs.AI"]  # Hardware Architecture, Artificial Intelligence
     enable_diff: true  # 差分取得機能を有効化
     sort_by: "lastUpdatedDate"
