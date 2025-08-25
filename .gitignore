@@ -1,52 +1,16 @@
-# Log files
-logs/
-
-# Results and backups
+logs/scraper.log
 results/
-*.backup
-
-# Model files
 models/
-
-# Python cache
-__pycache__/
 src/__pycache__/
 src/models/__pycache__/
 src/scrapers/__pycache__/
 src/utils/__pycache__/
-*.pyc
-*.pyo
-
-# Sensitive configuration files (use templates instead)
+src/__pycache__/
 config/email_credentials.yaml
 config/recipients.yaml
-config/email_credentials.yaml.backup
-config/recipients.yaml.backup
-
-# Personal diary files
+results/fpga_documents.json
 diary/2024-01-20.md
 diary/2025-07-18.md
-
-# Development and debug files
-debug_*.py
-test_papers.json
-sanitize*
-*_backup*
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Specific utility scripts (development only)
-create_diary.py
-fix_localllm.py
-localllm_patch.py
-show_*.py
-simple_email_test.py
-minimal_email_test.py
+.gitignore
+results/fpga_documents.json
+results/fpga_documents.json
