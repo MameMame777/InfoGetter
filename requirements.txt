@@ -1,0 +1,12 @@
+requests==2.31.0
+beautifulsoup4==4.12.2
+selenium==4.15.2
+webdriver-manager==4.0.1
+pydantic==2.5.0
+pyyaml==6.0.1
+lxml==4.9.3
+
+# LocalLLM integration - Manual setup required
+# Issue: https://github.com/MameMame777/LocalLLM/issues/[NUMBER]
+# Please clone LocalLLM repository manually for integration
+# Git: git clone https://github.com/MameMame777/LocalLLM.git
