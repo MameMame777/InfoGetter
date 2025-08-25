@@ -1,0 +1,47 @@
+# LLM Models Configuration
+models_directory: "models"
+download_models_automatically: true
+
+# Available model configurations
+models:
+  # Lightweight Japanese model (recommended for InfoGetter)
+  japanese_small:
+    name: "elyza/ELYZA-japanese-Llama-2-7b-fast-instruct-q4_K_M.gguf"
+    type: "llama-cpp"
+    context_size: 4096
+    temperature: 0.3
+    max_tokens: 2000
+    description: "Japanese optimized Llama model (4-bit quantized)"
+    file_size: "~4GB"
+    download_url: "https://huggingface.co/elyza/ELYZA-japanese-Llama-2-7b-fast-instruct-GGUF/resolve/main/ELYZA-japanese-Llama-2-7b-fast-instruct-q4_K_M.gguf"
+    
+  # Alternative lightweight model
+  japanese_tiny:
+    name: "rinna/japanese-gpt2-small"
+    type: "transformers"
+    context_size: 1024
+    temperature: 0.7
+    max_tokens: 500
+    description: "Small Japanese GPT-2 model"
+    file_size: "~500MB"
+    
+  # English model option
+  english_small:
+    name: "microsoft/DialoGPT-small"
+    type: "transformers"
+    context_size: 1024
+    temperature: 0.6
+    max_tokens: 1000
+    description: "Small English conversational model"
+    file_size: "~200MB"
+
+# Default model selection
+default_model: "japanese_tiny"  # Start with smallest model for testing
+
+# LLM Processing settings
+processing:
+  enable_gpu: false  # Set to true if CUDA available
+  batch_size: 1
+  timeout_seconds: 300
+  retry_attempts: 3
+  fallback_on_error: true
