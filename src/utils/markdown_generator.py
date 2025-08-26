@@ -1,5 +1,5 @@
 """
-Markdown Report Generator for Real Llama Summaries
+Markdown Report Generator for Mistral Academic Summaries
 ==================================================
 """
 
@@ -10,13 +10,13 @@ from typing import Dict, Any
 from pathlib import Path
 
 class MarkdownReportGenerator:
-    """Real Llama要約結果のMarkdownレポート生成"""
+    """Mistral Academic要約結果のMarkdownレポート生成"""
     
     def __init__(self):
         self.output_dir = "results"
         
     def generate_summary_report(self, main_summary_file: str, individual_summaries_file: str = None) -> str:
-        """Real Llama要約のMarkdownレポートを生成"""
+        """Mistral Academic要約のMarkdownレポートを生成"""
         
         # Load main summary data
         with open(main_summary_file, 'r', encoding='utf-8') as f:
@@ -33,7 +33,7 @@ class MarkdownReportGenerator:
         
         # Save markdown file
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"real_llama_summary_report_{timestamp}.md"
+        filename = f"mistral_academic_summary_report_{timestamp}.md"
         filepath = os.path.join(self.output_dir, filename)
         
         with open(filepath, 'w', encoding='utf-8') as f:
@@ -45,7 +45,7 @@ class MarkdownReportGenerator:
         """Markdownコンテンツを生成"""
         
         # Header
-        content = "# 🤖 Real Llama AI 学術論文要約レポート\n\n"
+        content = "# 🤖 Mistral Academic AI 学術論文要約レポート\n\n"
         content += f"**生成日時**: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}\n\n"
         content += "---\n\n"
         
@@ -57,9 +57,9 @@ class MarkdownReportGenerator:
             content += f"- **データソース数**: {scan_info.get('total_sources', 0)}\n"
             content += f"- **総論文数**: {scan_info.get('total_documents', 0)}\n\n"
         
-        # Real Llama Summary
+        # Mistral Academic Summary
         if 'llm_summary' in main_data:
-            content += "## 🎯 Real Llama 総合要約\n\n"
+            content += "## 🎯 Mistral Academic 総合要約\n\n"
             
             # Model Information
             if 'llm_summary_info' in main_data:
@@ -82,13 +82,18 @@ class MarkdownReportGenerator:
         
         # Individual Summaries
         if individual_data and 'individual_summaries' in individual_data:
-            content += "## 📚 個別論文日本語要約 (Real Llama生成)\n\n"
+            content += "## 📚 個別論文日本語要約 (Mistral Academic生成)\n\n"
             
             # Processing Statistics
             content += "### 📈 処理統計\n\n"
-            content += f"- **処理論文数**: {individual_data.get('total_papers', 0)}\n"
-            content += f"- **総処理時間**: {individual_data.get('total_processing_time', 0):.1f}秒\n"
-            content += f"- **平均処理時間**: {individual_data.get('average_processing_time', 0):.1f}秒/論文\n\n"
+            summaries = individual_data['individual_summaries']
+            total_papers = len(summaries)
+            total_time = sum(s.get('processing_time', 0) for s in summaries)
+            avg_time = total_time / total_papers if total_papers > 0 else 0
+            
+            content += f"- **処理論文数**: {total_papers}\n"
+            content += f"- **総処理時間**: {total_time:.1f}秒\n"
+            content += f"- **平均処理時間**: {avg_time:.1f}秒/論文\n\n"
             
             # Individual Papers
             summaries = individual_data['individual_summaries']
@@ -111,7 +116,7 @@ class MarkdownReportGenerator:
                     content += f"```\n{original_abstract}\n```\n\n"
                 
                 # Japanese Summary
-                content += "#### 🇯🇵 日本語要約 (Real Llama生成)\n\n"
+                content += "#### 🇯🇵 日本語要約 (Mistral Academic生成)\n\n"
                 japanese_summary = summary.get('japanese_summary', '')
                 content += f"{japanese_summary}\n\n"
                 
@@ -139,7 +144,7 @@ class MarkdownReportGenerator:
         # Footer
         content += "---\n\n"
         content += "## 🔧 技術情報\n\n"
-        content += "- **生成システム**: InfoGatherer with Real Llama\n"
+        content += "- **生成システム**: InfoGatherer with Mistral Academic\n"
         content += "- **LLMエンジン**: llama-cpp-python\n"
         content += "- **処理タイプ**: ローカルLLM (プライバシー保護)\n"
         content += "- **出力形式**: Markdown Report\n\n"

@@ -131,9 +131,9 @@ class InfoGatherer:
         if self.config.get('llm_integration', {}).get('enabled', False):
             try:
                 self.llm_summarizer = RealLlamaSummarizer()
-                self.logger.info("✅ Real Llama summarizer initialized successfully")
+                self.logger.info("✅ Mistral Academic summarizer initialized successfully")
             except Exception as e:
-                self.logger.warning(f"⚠️ Real Llama summarizer initialization failed: {e}")
+                self.logger.warning(f"⚠️ Mistral Academic summarizer initialization failed: {e}")
                 self.logger.info("Continue without LLM functionality")
         
         # スクレイパーの初期化
@@ -253,68 +253,108 @@ class InfoGatherer:
             
             if self.llm_summarizer:
                 try:
-                    self.logger.info("🤖 Generating Real Llama summary of results")
+                    self.logger.info("🤖 Generating Mistral Academic summary of results")
                     
-                    # Use Real Llama for document summarization
-                    llm_result = self.llm_summarizer.summarize_documents(output_file)
+                    # Convert results to a flat list of Document objects for summarization
+                    all_documents = []
+                    for source_name, documents in results.items():
+                        all_documents.extend(documents)
                     
-                    # Check if summary generation was successful
-                    summary_text = llm_result.get('summary', '')
-                    processing_method = llm_result.get('processing_method', 'unknown')
-                    
-                    # Real Llama always provides safe summaries
-                    if summary_text and len(summary_text) > 50:
-                        summary_generation_success = True
-                        self.logger.info(f"✅ Real Llama summary generated successfully ({processing_method})")
-                        llm_summary = summary_text
-                        
-                        # Generate individual Japanese summaries
-                        try:
-                            self.logger.info("📝 Generating individual Japanese summaries...")
-                            individual_result = self.llm_summarizer.summarize_individual_papers(output_file)
-                            
-                            # Save individual summaries
-                            individual_file = "results/individual_summaries.json"
-                            with open(individual_file, 'w', encoding='utf-8') as f:
-                                json.dump(individual_result, f, ensure_ascii=False, indent=2)
-                            
-                            self.logger.info(f"✅ Individual summaries saved to {individual_file}")
-                            self.logger.info(f"📊 Generated {individual_result['total_papers']} individual summaries")
-                            
-                        except Exception as ind_e:
-                            self.logger.warning(f"⚠️ Individual summary generation failed: {ind_e}")
-                        
-                        # Save summary to the original JSON file
-                        try:
-                            # Load existing data
-                            with open(output_file, 'r', encoding='utf-8') as f:
-                                json_data = json.load(f)
-                            
-                            # Add Academic LocalLLM summary to JSON data
-                            json_data['llm_summary'] = summary_text
-                            json_data['llm_summary_info'] = {
-                                'timestamp': datetime.now().isoformat(),
-                                'source_file': output_file,
-                                'language': llm_result.get('language', 'ja'),
-                                'processing_method': processing_method,
-                                'paper_count': llm_result.get('paper_count', 0),
-                                'technical_highlights': llm_result.get('technical_highlights', []),
-                                'innovation_analysis': llm_result.get('innovation_analysis', []),
-                                'model_info': llm_result.get('model_info', {}),
-                                'email_safe': True  # Academic LocalLLM always produces safe content
-                            }
-                            
-                            # Save updated data
-                            with open(output_file, 'w', encoding='utf-8') as f:
-                                json.dump(json_data, f, ensure_ascii=False, indent=2)
-                            
-                            self.logger.info(f"💾 Academic summary saved to {output_file}")
-                        except Exception as save_e:
-                            self.logger.warning(f"⚠️ Failed to save summary to JSON: {save_e}")
-                    else:
+                    if not all_documents:
+                        self.logger.warning("⚠️ No documents found for summarization")
                         summary_generation_success = False
-                        self.logger.error("❌ Summary generation failed or produced insufficient content")
-                        self.logger.error("🚫 Email sending will be CANCELLED to prevent customer complaints")
+                    else:
+                        # Use Mistral Academic for document summarization
+                        llm_result = self.llm_summarizer.summarize_documents(all_documents)
+                        
+                        # Check if summary generation was successful
+                        summary_text = llm_result.get('summary', '')
+                        processing_status = llm_result.get('processing_status', 'Failed')
+                        
+                        # Mistral Academic always provides safe summaries
+                        if processing_status == 'Success' and summary_text and len(summary_text) > 50:
+                            summary_generation_success = True
+                            self.logger.info(f"✅ Mistral Academic summary generated successfully")
+                            llm_summary = summary_text
+                            
+                            # Generate individual Japanese summaries
+                            try:
+                                self.logger.info("📝 Generating individual Japanese summaries...")
+                                individual_result = self.llm_summarizer.summarize_individual_papers(all_documents)
+                                
+                                # Save individual summaries
+                                individual_file = "results/individual_summaries.json"
+                                with open(individual_file, 'w', encoding='utf-8') as f:
+                                    json.dump(individual_result, f, ensure_ascii=False, indent=2)
+                                
+                                self.logger.info(f"✅ Individual summaries saved to {individual_file}")
+                                if 'individual_summaries' in individual_result:
+                                    self.logger.info(f"📊 Generated {len(individual_result['individual_summaries'])} individual summaries")
+                                
+                                # Add individual summaries back to the original documents in results
+                                try:
+                                    if individual_result.get('processing_status') == 'Success':
+                                        individual_summaries = individual_result.get('individual_summaries', [])
+                                        
+                                        # Load existing JSON data to add summaries
+                                        with open(output_file, 'r', encoding='utf-8') as f:
+                                            json_data = json.load(f)
+                                        
+                                        # Map summaries back to documents by index
+                                        doc_index = 0
+                                        for source_name in json_data.get('sources', {}):
+                                            source_info = json_data['sources'][source_name]
+                                            if 'documents' in source_info:
+                                                for doc in source_info['documents']:
+                                                    if doc_index < len(individual_summaries):
+                                                        summary_data = individual_summaries[doc_index]
+                                                        # Add summary fields to document JSON
+                                                        doc['japanese_summary'] = summary_data.get('japanese_summary', '')
+                                                        doc['summary_processing_time'] = summary_data.get('processing_time', 0)
+                                                        doc['summary_model'] = summary_data.get('model_used', 'Mistral-7B-Instruct-v0.2')
+                                                        doc['summary_length'] = summary_data.get('summary_length', 0)
+                                                        doc_index += 1
+                                        
+                                        # Save updated JSON with individual summaries
+                                        with open(output_file, 'w', encoding='utf-8') as f:
+                                            json.dump(json_data, f, ensure_ascii=False, indent=2)
+                                        
+                                        self.logger.info(f"📄 Individual summaries added to documents in {output_file}")
+                                except Exception as doc_e:
+                                    self.logger.warning(f"⚠️ Failed to add summaries to JSON: {doc_e}")
+                                
+                            except Exception as ind_e:
+                                self.logger.warning(f"⚠️ Individual summary generation failed: {ind_e}")
+                            
+                            # Save summary to the original JSON file
+                            try:
+                                # Load existing data
+                                with open(output_file, 'r', encoding='utf-8') as f:
+                                    json_data = json.load(f)
+                                
+                                # Add Academic LocalLLM summary to JSON data
+                                json_data['llm_summary'] = summary_text
+                                json_data['llm_summary_info'] = {
+                                    'timestamp': datetime.now().isoformat(),
+                                    'source_file': output_file,
+                                    'language': llm_result.get('language', 'ja'),
+                                    'processing_method': llm_result.get('summary_info', {}).get('processing_method', 'mistral-academic'),
+                                    'paper_count': len(all_documents),
+                                    'model_info': llm_result.get('summary_info', {}).get('model_info', {}),
+                                    'email_safe': True  # Academic LocalLLM always produces safe content
+                                }
+                                
+                                # Save updated data
+                                with open(output_file, 'w', encoding='utf-8') as f:
+                                    json.dump(json_data, f, ensure_ascii=False, indent=2)
+                                
+                                self.logger.info(f"💾 Academic summary saved to {output_file}")
+                            except Exception as save_e:
+                                self.logger.warning(f"⚠️ Failed to save summary to JSON: {save_e}")
+                        else:
+                            summary_generation_success = False
+                            self.logger.error("❌ Summary generation failed or produced insufficient content")
+                            self.logger.error("🚫 Email sending will be CANCELLED to prevent customer complaints")
                         
                 except Exception as e:
                     summary_generation_success = False

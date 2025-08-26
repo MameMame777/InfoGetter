@@ -60,7 +60,7 @@ class EmailSender:
         """スクレイピング結果をメールで送信（Markdownレポート添付）"""
         try:
             # メール内容を作成
-            subject = f"FPGA IP Document Scan Results with Real Llama - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+            subject = f"FPGA IP Document Scan Results with Mistral Academic - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
             body = self._create_email_body(results, llm_summary)
             
             # Markdownレポートを生成
@@ -98,13 +98,13 @@ class EmailSender:
             return False
     
     def _create_email_body(self, results: Dict[str, List[Document]], llm_summary: Dict = None) -> str:
-        """メール本文を作成（Real Llama要約対応）"""
-        body = "🤖 FPGA IP Document Scan Results with Real Llama AI Summary\n"
+        """メール本文を作成（Mistral Academic要約対応）"""
+        body = "🤖 FPGA IP Document Scan Results with Mistral Academic AI Summary\n"
         body += "=" * 70 + "\n\n"
         
-        # Real Llama要約があれば追加（優先表示）
+        # Mistral Academic要約があれば追加（優先表示）
         if llm_summary and llm_summary.get('processing_status') == 'Success':
-            body += "🎯 Real Llama AI要約レポート\n"
+            body += "🎯 Mistral Academic AI要約レポート\n"
             body += "-" * 50 + "\n"
             
             # 要約の基本情報
@@ -125,11 +125,12 @@ class EmailSender:
                     body += f"📏 生成トークン数: {model_info.get('tokens_generated', 0)}\n"
                 body += "\n"
             
-            # Real Llama生成要約本文
+            # Mistral Academic生成要約本文
             ai_summary = llm_summary.get('summary', '')
             if ai_summary:
-                body += "📄 Real Llama要約内容:\n"
+                body += "📄 Mistral Academic要約内容:\n"
                 body += "-" * 30 + "\n"
+                # Full summary without truncation for email
                 body += ai_summary + "\n\n"
             
             # 個別論文要約があれば追加
@@ -141,23 +142,29 @@ class EmailSender:
                     
                     if 'individual_summaries' in individual_data:
                         summaries = individual_data['individual_summaries']
-                        body += "📚 個別論文日本語要約 (Real Llama生成)\n"
+                        body += "📚 個別論文日本語要約 (Mistral Academic生成)\n"
                         body += "=" * 50 + "\n\n"
                         
                         for i, summary in enumerate(summaries[:5]):  # 最初の5件のみ表示
                             body += f"📝 論文 {summary.get('paper_index', i+1)}: \n"
                             title = summary.get('title', 'タイトル不明')
-                            if len(title) > 60:
-                                title = title[:60] + "..."
-                            body += f"タイトル: {title}\n"
+                            
+                            # Extract clean title from name='...' format
+                            if title.startswith("name='") and "'" in title[6:]:
+                                end_quote = title.find("'", 6)
+                                clean_title = title[6:end_quote]
+                            else:
+                                clean_title = title
+                            
+                            # Show full title without truncation
+                            body += f"タイトル: {clean_title}\n"
                             body += f"カテゴリ: {summary.get('category', '不明')}\n"
                             body += f"処理時間: {summary.get('processing_time', 0):.1f}秒\n"
                             body += f"要約文字数: {summary.get('summary_length', 0)}文字\n"
                             body += "-" * 40 + "\n"
                             
                             japanese_summary = summary.get('japanese_summary', '')
-                            if len(japanese_summary) > 300:
-                                japanese_summary = japanese_summary[:300] + "..."
+                            # Show full summary without truncation
                             body += japanese_summary + "\n"
                             body += "-" * 40 + "\n\n"
                         
@@ -171,7 +178,7 @@ class EmailSender:
             body += "=" * 70 + "\n\n"
         
         elif llm_summary and llm_summary.get('processing_status') == 'Failed':
-            body += "⚠️ Real Llama要約生成に失敗しました\n"
+            body += "⚠️ Mistral Academic要約生成に失敗しました\n"
             error_msg = llm_summary.get('summary_info', {}).get('error', '不明なエラー')
             body += f"エラー: {error_msg}\n\n"
             body += "=" * 70 + "\n\n"
