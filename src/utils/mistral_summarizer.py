@@ -187,6 +187,112 @@ class MistralSummarizer:
             self.logger.error(f"❌ Long text summarization failed: {e}")
             return f"❌ Long text processing error: {str(e)}"
     
+    def _clean_content_for_summarization(self, content: str) -> Optional[str]:
+        """
+        Clean content by removing template artifacts and formatting issues
+        
+        Args:
+            content: Raw content that may contain template artifacts
+            
+        Returns:
+            Cleaned content suitable for summarization, or None if content is insufficient
+        """
+        # Check if content is too minimal to summarize
+        if not content or content == "No content" or len(content.strip()) < 50:
+            return None
+            
+        # Remove common template artifacts
+        lines = content.split('\n')
+        cleaned_lines = []
+        
+        skip_patterns = [
+            'Research Content:',
+            'Summary Guidelines:',
+            '- Research purpose and background',
+            '- Main methods and approaches',
+            '- Key findings and results',
+            '- Significance and impact',
+            'Japanese Summary:',
+            'Research Topic:',
+            'Methods and Approaches:',
+            'Key Findings and Results:',
+            'There is a research paper with the following content:'
+        ]
+        
+        for line in lines:
+            line = line.strip()
+            # Skip empty lines and template artifacts
+            if not line or any(pattern in line for pattern in skip_patterns):
+                continue
+            # Skip lines that look like JSON structure
+            if line.startswith('{') or line.startswith('"') or '": ' in line:
+                continue
+            # Skip lines with datetime objects or HttpUrl
+            if 'datetime.datetime' in line or 'HttpUrl' in line or '<DataSourceType.' in line:
+                continue
+            
+            cleaned_lines.append(line)
+        
+        # Rejoin and limit length
+        cleaned_content = '\n'.join(cleaned_lines)
+        
+        # If content is still too short after cleaning, return None
+        if len(cleaned_content.strip()) < 100:
+            return None
+        
+        # If content is still too long, take first portion
+        if len(cleaned_content) > 5000:
+            cleaned_content = cleaned_content[:5000] + "..."
+            
+        return cleaned_content
+    
+    def _clean_mistral_output(self, output: str) -> str:
+        """
+        Clean Mistral output to remove unwanted formatting artifacts
+        
+        Args:
+            output: Raw output from Mistral
+            
+        Returns:
+            Cleaned output suitable for display
+        """
+        if not output:
+            return output
+            
+        # Split into lines for processing
+        lines = output.split('\n')
+        cleaned_lines = []
+        consecutive_dashes = 0
+        
+        for line in lines:
+            # Count consecutive lines with many dashes
+            if len([c for c in line if c == '-']) > 20:
+                consecutive_dashes += 1
+                # Skip lines with excessive dashes (likely formatting artifacts)
+                if consecutive_dashes > 1:
+                    continue
+            else:
+                consecutive_dashes = 0
+                
+            # Remove lines that are mostly dashes
+            dash_ratio = len([c for c in line if c == '-']) / max(len(line), 1)
+            if dash_ratio > 0.8 and len(line) > 10:
+                continue
+                
+            # Remove excessive whitespace and normalize
+            line = line.strip()
+            if line:
+                cleaned_lines.append(line)
+        
+        # Rejoin and clean up
+        cleaned_output = '\n'.join(cleaned_lines)
+        
+        # Remove multiple consecutive newlines
+        while '\n\n\n' in cleaned_output:
+            cleaned_output = cleaned_output.replace('\n\n\n', '\n\n')
+            
+        return cleaned_output.strip()
+    
     def _generate_mistral_summary(self, content: str, language: str = "japanese") -> str:
         """
         Generate summary using Mistral-7B-Instruct model
@@ -202,13 +308,21 @@ class MistralSummarizer:
             return "❌ Mistral model not initialized"
         
         try:
+            # Clean content to remove template artifacts
+            cleaned_content = self._clean_content_for_summarization(content)
+            
+            # Skip summarization if content is insufficient
+            if cleaned_content is None:
+                self.logger.warning("🚫 Skipping summarization - insufficient content after cleaning")
+                return "❌ 要約をスキップしました：コンテンツが不十分または403エラーのため利用できません。"
+            
             # Create academic-focused prompt for Mistral
             if language.lower() == "japanese":
                 prompt = f"""
 あなたは学術論文の専門家です。以下の研究論文を日本語で要約してください：
 
 研究内容:
-{content}
+{cleaned_content}
 
 要約の指針：
 - 研究の目的と背景
@@ -222,7 +336,7 @@ class MistralSummarizer:
 You are an academic expert. Please summarize the following research paper:
 
 Content:
-{content}
+{cleaned_content}
 
 Summary guidelines:
 - Research purpose and background
@@ -236,16 +350,19 @@ Summary:"""
             start_time = time.time()
             response = self.llm(
                 prompt,
-                max_tokens=1024,     # Generous token limit for comprehensive summaries
+                max_tokens=3072,     # Further increased token limit for complete summaries
                 temperature=0.3,     # Low temperature for consistent academic output
                 top_p=0.9,          # Focused but creative responses
                 repeat_penalty=1.1,  # Avoid repetition
-                stop=["\n\n", "要約終了", "Summary complete"],
+                stop=[],             # Remove all stop conditions to allow complete generation
                 echo=False
             )
             
             processing_time = time.time() - start_time
             summary = response['choices'][0]['text'].strip()
+            
+            # Clean the output to remove unwanted formatting artifacts
+            summary = self._clean_mistral_output(summary)
             
             self.logger.info(f"🧠 Mistral processing time: {processing_time:.1f}s")
             return summary
@@ -361,8 +478,12 @@ Summary:"""
                         'model_name': 'Mistral-7B-Instruct-v0.2',
                         'model_type': 'Academic Local LLM',
                         'model_path': self.model_path,
+                        'backend': 'llama-cpp-python',
                         'is_genuine_llm': True,
-                        'context_window': 8192
+                        'context_window': 8192,
+                        'processing_time': round(processing_time, 2),
+                        'tokens_generated': len(overall_summary.split()),  # Approximate token count
+                        'context_length': len(combined_text)
                     },
                     'summary_length': len(overall_summary),
                     'processing_method': 'mistral-academic'
@@ -458,6 +579,8 @@ Summary:"""
                 
                 # Safe attribute access for summary data
                 url = getattr(doc, 'url', '') if hasattr(doc, 'url') else (doc.get('url', '') if isinstance(doc, dict) else '')
+                # Convert HttpUrl to string for JSON serialization
+                url = str(url) if url else ''
                 source = getattr(doc, 'source', 'Unknown') if hasattr(doc, 'source') else (doc.get('source', 'Unknown') if isinstance(doc, dict) else 'Unknown')
                 category = getattr(doc, 'category', 'Unknown') if hasattr(doc, 'category') else (doc.get('category', 'Unknown') if isinstance(doc, dict) else 'Unknown')
                 

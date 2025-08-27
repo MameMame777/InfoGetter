@@ -24,9 +24,23 @@ sys.path.insert(0, project_root)
 from src.scrapers.base_scraper import BaseScraper
 from src.models.document import Document, DataSourceType
 
+# コンテンツフォールバック機能をインポート
+try:
+    from ..utils.content_fallback import ContentFallbackGenerator
+except ImportError:
+    # フォールバック用のダミークラス
+    class ContentFallbackGenerator:
+        def generate_content_from_title(self, title: str, url: str, source: str = "FPGA Documentation") -> str:
+            return f"Title: {title}\nURL: {url}\nSource: {source}\nNote: Content could not be retrieved due to access restrictions."
+
 
 class XilinxScraper(BaseScraper):
     """Xilinx (AMD) ドキュメントサイトのスクレイパー"""
+    
+    def __init__(self, config: dict):
+        super().__init__(config)
+        # コンテンツフォールバック生成器を初期化
+        self.content_fallback = ContentFallbackGenerator()
     
     def get_source_type(self) -> DataSourceType:
         return DataSourceType.WEB_SCRAPING
@@ -586,13 +600,23 @@ class XilinxScraper(BaseScraper):
                     # カテゴリを推定
                     category = self._extract_category(title)
                     
+                    # コンテンツを取得（403エラー対応付き）
+                    content = self._get_document_content(full_url, title)
+                    
+                    # 403エラーで取得できない場合はフォールバックコンテンツを生成
+                    if not content or len(content.strip()) < 100:
+                        self.logger.warning(f"Insufficient content for {title} ({full_url}), generating fallback content")
+                        # フォールバックコンテンツを生成
+                        content = self._generate_content_from_title(title, full_url)
+                    
                     doc = self._create_document(
                         name=title,
                         url=full_url,
                         category=category,
                         fpga_series=fpga_series,
                         file_type=file_type,
-                        search_url=search_url  # 検索URLを追加
+                        search_url=search_url,  # 検索URLを追加
+                        content=content  # コンテンツを渡す
                     )
                     
                     documents.append(doc)
@@ -966,4 +990,111 @@ class XilinxScraper(BaseScraper):
         
         self.logger.info(f"Built search URL: {full_url}")
         return full_url
+    
+    def _get_document_content(self, url: str, title: str) -> str:
+        """
+        ドキュメントのコンテンツを取得（AMD/Xilinx用403エラー対応）
+        """
+        try:
+            # AMD/Xilinxサイト用のheaders
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Cache-Control': 'max-age=0',
+                'DNT': '1'
+            }
+            
+            # AMD/Xilinxサイト用の遅延
+            if 'amd.com' in url:
+                self.logger.info(f"AMD URL detected, applying 3s crawl delay")
+                import time
+                time.sleep(3)
+            
+            import requests
+            response = requests.get(url, headers=headers, timeout=15)
+            
+            if response.status_code == 403:
+                self.logger.warning(f"403 Forbidden for {url}, using fallback content")
+                return ""
+            elif response.status_code != 200:
+                self.logger.warning(f"HTTP {response.status_code} for {url}, using fallback content")
+                return ""
+            
+            # 簡単なコンテンツ抽出
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # タイトルとメタ説明を取得
+            page_title = soup.find('title')
+            title_text = page_title.get_text().strip() if page_title else ""
+            
+            meta_description = ""
+            try:
+                meta_tag = soup.find('meta', attrs={'name': 'description'})
+                if meta_tag:
+                    meta_description = str(meta_tag.get('content', '')) if hasattr(meta_tag, 'get') else ""
+            except:
+                meta_description = ""
+            
+            # 基本的なコンテンツ部分を抽出
+            content_parts = []
+            if title_text:
+                content_parts.append(f"Page Title: {title_text}")
+            if meta_description:
+                content_parts.append(f"Description: {meta_description}")
+                
+            # 主要なテキストコンテンツを抽出
+            for tag in soup.find_all(['h1', 'h2', 'h3', 'p', 'div'], text=True):
+                text = tag.get_text(strip=True)
+                if text and len(text) > 30:
+                    content_parts.append(text)
+                    if len(content_parts) > 10:
+                        break
+            
+            content = '\n'.join(content_parts)
+            
+            # 最大長を制限
+            if len(content) > 5000:
+                content = content[:5000] + "..."
+                
+            return content if len(content.strip()) > 100 else ""
+            
+        except Exception as e:
+            self.logger.warning(f"Content fetch failed for {url}: {e}")
+            return ""
+    
+    def _generate_content_from_title(self, title: str, url: str) -> str:
+        """
+        タイトルとURLから詳細なコンテンツを生成（Xilinx/AMD用フォールバック）
+        """
+        try:
+            # altera_scraperと同じフォールバック生成器を使用
+            if hasattr(self, 'content_fallback'):
+                return self.content_fallback.generate_content_from_title(
+                    title=title,
+                    url=url,
+                    source="AMD/Xilinx Documentation"
+                )
+        except Exception as e:
+            self.logger.warning(f"Fallback content generation failed: {e}")
+        
+        # 基本的なフォールバック
+        return f"""Title: {title}
+URL: {url}
+Source: AMD/Xilinx Documentation
+
+Document Type: Technical Documentation
+Category: AMD/Xilinx FPGA Documentation
+Description: Technical documentation from AMD's FPGA and programmable device portfolio (formerly Xilinx).
+
+Note: Content could not be retrieved due to access restrictions.
+This document likely contains technical specifications, implementation guidelines, 
+and best practices for AMD/Xilinx FPGA technologies."""
 

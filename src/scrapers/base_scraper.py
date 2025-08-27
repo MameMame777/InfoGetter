@@ -37,7 +37,7 @@ class BaseScraper(ABC):
     
     def _create_document(self, name: str, url: str, category: str = None, 
                         fpga_series: str = None, file_type: str = None, 
-                        search_url: str = None, abstract: str = None) -> Document:
+                        search_url: str = None, abstract: str = None, content: str = None) -> Document:
         """Documentオブジェクトを作成"""
         content_for_hash = f"{name}{url}{category or ''}{fpga_series or ''}"
         
@@ -51,6 +51,7 @@ class BaseScraper(ABC):
             fpga_series=fpga_series,
             file_type=file_type,
             abstract=abstract,
+            content=content,  # contentフィールドを正しく設定
             scraped_at=datetime.now(),
             hash=self._generate_hash(content_for_hash)
         )

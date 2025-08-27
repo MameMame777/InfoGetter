@@ -107,6 +107,7 @@ class ArxivScraper(BaseScraper):
                 url=paper['link'],
                 category=category,
                 abstract=paper['abstract'],
+                content=paper['abstract'],  # Use abstract as content for summarization
                 search_url=f"{self.base_url}?search_query=cat:{category}"
             )
             documents.append(doc)

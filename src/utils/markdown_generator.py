@@ -102,7 +102,16 @@ class MarkdownReportGenerator:
                 
                 # Paper Information
                 content += "#### 📋 論文情報\n\n"
-                content += f"- **タイトル**: {summary.get('title', 'タイトル不明')}\n"
+                
+                # Clean title from Python repr format
+                title = summary.get('title', 'タイトル不明')
+                if title.startswith("name='") and "'" in title[6:]:
+                    # Extract text between name=' and '
+                    end_quote = title.find("'", 6)
+                    if end_quote != -1:
+                        title = title[6:end_quote]
+                
+                content += f"- **タイトル**: {title}\n"
                 content += f"- **URL**: [{summary.get('url', '')}]({summary.get('url', '')})\n"
                 content += f"- **ソース**: {summary.get('source', '不明')}\n"
                 content += f"- **カテゴリ**: {summary.get('category', '不明')}\n"

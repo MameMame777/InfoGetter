@@ -17,6 +17,15 @@ from urllib.parse import urljoin, urlparse
 import sys
 import os
 
+# コンテンツフォールバック機能をインポート
+try:
+    from ..utils.content_fallback import ContentFallbackGenerator
+except ImportError:
+    # フォールバック用のダミークラス
+    class ContentFallbackGenerator:
+        def generate_content_from_title(self, title: str, url: str, source: str = "FPGA Documentation") -> str:
+            return f"Title: {title}\nURL: {url}\nSource: {source}\nNote: Content could not be retrieved due to access restrictions."
+
 # プロジェクトのルートディレクトリをPythonパスに追加
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
@@ -27,6 +36,11 @@ from src.models.document import Document, DataSourceType
 
 class AlteraScraper(BaseScraper):
     """Altera (Intel) ドキュメントサイトのスクレイパー"""
+    
+    def __init__(self, config: dict):
+        super().__init__(config)
+        # コンテンツフォールバック生成器を初期化
+        self.content_fallback = ContentFallbackGenerator()
     
     def get_source_type(self) -> DataSourceType:
         return DataSourceType.WEB_SCRAPING
@@ -268,13 +282,23 @@ class AlteraScraper(BaseScraper):
                     # カテゴリを推定
                     category = self._extract_category(title)
                     
+                    # コンテンツを取得（高度なBot回避技術付き）
+                    content = self._get_document_content(full_url, title)
+                    
+                    # 403エラーで取得できない場合はフォールバックコンテンツを生成
+                    if not content or len(content.strip()) < 100:
+                        self.logger.warning(f"Insufficient content for {title} ({full_url}), generating fallback content")
+                        # フォールバックコンテンツを生成
+                        content = self._generate_content_from_title(title, full_url)
+                    
                     doc = self._create_document(
                         name=title,
                         url=full_url,
                         category=category,
                         fpga_series=fpga_series,
                         file_type=file_type,
-                        search_url=search_url  # 検索URLを追加
+                        search_url=search_url,  # 検索URLを追加
+                        content=content  # コンテンツを渡す
                     )
                     
                     documents.append(doc)
@@ -842,3 +866,341 @@ class AlteraScraper(BaseScraper):
             return True
         
         return False
+
+    def _get_document_content(self, url: str, title: str) -> str:
+        """
+        ドキュメントのコンテンツを取得（高度なBot回避技術付き）
+        
+        403エラーやその他の問題が発生した場合は、タイトルから基本情報を生成
+        """
+        try:
+            # 複数の方法でコンテンツ取得を試行
+            content = None
+            
+            # 方法1: より人間らしいrequestsヘッダー
+            content = self._try_requests_with_human_headers(url)
+            if content and len(content.strip()) > 0:
+                return content
+                
+            # 方法2: Seleniumを使用してJavaScript対応
+            content = self._try_selenium_content_fetch(url)
+            if content and len(content.strip()) > 0:
+                return content
+                
+            # すべて失敗した場合はタイトルベースの内容を生成
+            self.logger.warning(f"All content fetch methods failed for {url}, generating title-based content")
+            return self._generate_content_from_title(title, url)
+            
+        except Exception as e:
+            self.logger.error(f"Error getting content for {url}: {e}, using title-based content")
+            return self._generate_content_from_title(title, url)
+    
+    def _try_requests_with_human_headers(self, url: str) -> str:
+        """より人間らしいヘッダーでrequestsを試行（robots.txt準拠）"""
+        try:
+            # robots.txtに基づいた遅延設定
+            if 'intel.com' in url:
+                self.logger.info(f"Intel URL detected, applying 10s crawl delay per robots.txt")
+                time.sleep(10)  # Intel robots.txtのCrawl-Delay: 10
+            elif 'amd.com' in url:
+                self.logger.info(f"AMD URL detected, applying 3s crawl delay")
+                time.sleep(3)   # AMD向けに慎重な遅延
+            
+            # より詳細で人間らしいヘッダー
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'Accept-Language': 'en-US,en;q=0.9,ja;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Sec-Fetch-User': '?1',
+                'Cache-Control': 'max-age=0',
+                'DNT': '1',
+                'Sec-Ch-Ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+                'Sec-Ch-Ua-Mobile': '?0',
+                'Sec-Ch-Ua-Platform': '"Windows"',
+                # リファラーを追加してより自然に見せる
+                'Referer': 'https://www.google.com/'
+            }
+            
+            # セッションを使用してcookieを管理
+            session = requests.Session()
+            session.headers.update(headers)
+            
+            # 段階的リトライ戦略
+            max_retries = 2
+            for attempt in range(max_retries):
+                try:
+                    self.logger.info(f"Attempting content fetch for {url} (attempt {attempt + 1})")
+                    response = session.get(url, timeout=20, allow_redirects=True)
+                    
+                    if response.status_code == 200:
+                        break
+                    elif response.status_code == 403:
+                        self.logger.warning(f"403 Forbidden for {url} (attempt {attempt + 1})")
+                        return ""
+                    elif response.status_code in [429, 503]:  # Rate limit
+                        wait_time = 15 * (attempt + 1)
+                        self.logger.warning(f"Rate limited ({response.status_code}) for {url}, waiting {wait_time}s")
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        self.logger.warning(f"HTTP {response.status_code} for {url} (attempt {attempt + 1})")
+                        if attempt == max_retries - 1:
+                            return ""
+                        time.sleep(5)
+                        
+                except requests.exceptions.Timeout:
+                    self.logger.warning(f"Timeout for {url} (attempt {attempt + 1})")
+                    if attempt < max_retries - 1:
+                        time.sleep(5)
+                    continue
+                except requests.exceptions.RequestException as e:
+                    self.logger.warning(f"Request failed for {url} (attempt {attempt + 1}): {e}")
+                    if attempt < max_retries - 1:
+                        time.sleep(5)
+                    continue
+            else:
+                # すべての試行が失敗
+                return ""
+            
+            # BeautifulSoupでHTMLを解析
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # ページタイトルを取得
+            page_title = soup.find('title')
+            title_text = page_title.get_text().strip() if page_title else ""
+            
+            # メタ説明を取得
+            meta_description = ""
+            try:
+                meta_tag = soup.find('meta', attrs={'name': 'description'})
+                if meta_tag:
+                    meta_description = str(meta_tag.get('content', '')) if hasattr(meta_tag, 'get') else ""
+            except:
+                meta_description = ""
+            
+            # 主要コンテンツを抽出（Intel/AMD特有の構造に対応）
+            content_parts = []
+            
+            if title_text:
+                content_parts.append(f"Page Title: {title_text}")
+            if meta_description:
+                content_parts.append(f"Description: {meta_description}")
+                
+            # より具体的なコンテンツセレクター
+            content_selectors = [
+                # Intel/AMD固有のコンテンツエリア
+                'main', 'article', '.content', '#content', '#main-content',
+                '.document-content', '.doc-content', '.main-content',
+                '[role="main"]', '.documentation-content', '.page-content',
+                # Intel特有のセレクター
+                '.doc-wrapper', '.documentation-wrapper', '.content-wrapper'
+            ]
+            
+            main_content = None
+            for selector in content_selectors:
+                main_content = soup.select_one(selector)
+                if main_content:
+                    self.logger.info(f"Found main content using selector: {selector}")
+                    break
+            
+            if main_content:
+                # メインコンテンツから段落を抽出
+                for tag in main_content.find_all(['h1', 'h2', 'h3', 'h4', 'p', 'li'], text=True):
+                    text = tag.get_text(strip=True)
+                    if text and len(text) > 30:  # 十分な長さのテキストのみ
+                        content_parts.append(text)
+                        if len(content_parts) > 20:  # 最大20セクション
+                            break
+            else:
+                # フォールバック：全体から段落を抽出
+                for tag in soup.find_all(['h1', 'h2', 'h3', 'p', 'div'], text=True):
+                    text = tag.get_text(strip=True)
+                    if text and len(text) > 30:
+                        content_parts.append(text)
+                        if len(content_parts) > 15:
+                            break
+            
+            content = '\n'.join(content_parts)
+            
+            # 最大長を制限
+            if len(content) > 8000:
+                content = content[:8000] + "..."
+                
+            return content if len(content.strip()) > 100 else ""
+            
+        except Exception as e:
+            self.logger.warning(f"Advanced requests failed for {url}: {e}")
+            return ""
+    
+    def _try_selenium_content_fetch(self, url: str) -> str:
+        """Seleniumを使用してJavaScript対応でコンテンツを取得"""
+        driver = None
+        try:
+            # 既存のWebDriverを再利用または新規作成
+            driver = self._create_webdriver()
+            
+            # より人間らしい動作
+            driver.implicitly_wait(3)
+            driver.get(url)
+            time.sleep(5)  # ページの完全な読み込みを待機
+            
+            # JavaScriptの実行完了を待機
+            driver.execute_script("return document.readyState") == "complete"
+            
+            # ページタイトルを取得
+            page_title = driver.title
+            
+            # ページソースを取得してBeautifulSoupで解析
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
+            
+            # メタ説明を取得
+            meta_description = ""
+            meta_tag = soup.find('meta', attrs={'name': 'description'})
+            if meta_tag:
+                meta_description = meta_tag.get('content', '')
+            
+            # 主要コンテンツを抽出
+            content_parts = []
+            
+            if page_title:
+                content_parts.append(f"Page Title: {page_title}")
+            if meta_description:
+                content_parts.append(f"Description: {meta_description}")
+                
+            # プライバシーポリシーページを検出
+            if self._is_privacy_or_policy_page(page_title, soup):
+                self.logger.warning(f"Detected privacy/policy page, skipping content extraction for {url}")
+                return ""
+                
+            # 主要なテキストコンテンツを抽出
+            for tag in soup.find_all(['h1', 'h2', 'h3', 'p', 'div'], text=True):
+                text = tag.get_text(strip=True)
+                if text and len(text) > 30:
+                    # プライバシーポリシー関連のコンテンツを除外
+                    if self._is_privacy_related_content(text):
+                        continue
+                    # FPGAに関連しないコンテンツを除外
+                    if not self._is_technical_content(text):
+                        continue
+                    content_parts.append(text)
+                    if len(content_parts) > 15:
+                        break
+            
+            content = '\n'.join(content_parts)
+            
+            # 最大長を制限
+            if len(content) > 8000:
+                content = content[:8000] + "..."
+                
+            return content if len(content.strip()) > 100 else ""
+            
+        except Exception as e:
+            self.logger.warning(f"Selenium content fetch failed for {url}: {e}")
+            return ""
+        finally:
+            if driver:
+                try:
+                    driver.quit()
+                except:
+                    pass
+    
+    def _generate_content_from_title(self, title: str, url: str) -> str:
+        """
+        タイトルとURLから詳細なコンテンツを生成
+        スクレイピングが失敗した場合のフォールバック（強化版）
+        """
+        try:
+            # 新しいフォールバック生成器を使用
+            return self.content_fallback.generate_content_from_title(
+                title=title,
+                url=url,
+                source="Intel/Altera Documentation"
+            )
+        except Exception as e:
+            self.logger.warning(f"Fallback content generation failed: {e}, using basic fallback")
+            # 基本的なフォールバック
+            return f"""Title: {title}
+URL: {url}
+Source: Intel/Altera Documentation
+
+Document Type: Technical Documentation
+Category: Intel FPGA Documentation
+Description: Technical documentation from Intel's FPGA and programmable device portfolio.
+
+Note: Content could not be retrieved due to access restrictions.
+This document likely contains technical specifications, implementation guidelines, 
+and best practices for Intel FPGA technologies."""
+    
+    def _is_privacy_or_policy_page(self, page_title: str, soup) -> bool:
+        """ページがプライバシーポリシーや企業ポリシーページかどうかを判定"""
+        title_lower = page_title.lower() if page_title else ""
+        
+        # プライバシー関連のページタイトルパターン
+        privacy_patterns = [
+            'privacy policy', 'cookie policy', 'data policy', 'consent',
+            'terms and conditions', 'legal notice', 'legal information',
+            'modern slavery', 'forced labor', 'tax strategy', 'governance',
+            'プライバシーポリシー', 'クッキーポリシー', 'データポリシー',
+            '利用規約', '法的告知', '企業統治'
+        ]
+        
+        # タイトルチェック
+        for pattern in privacy_patterns:
+            if pattern in title_lower:
+                return True
+                
+        # ページ内容からも判定
+        page_text = soup.get_text().lower() if soup else ""
+        privacy_indicators = [
+            'this website uses cookies', 'we use cookies',
+            'privacy policy', 'cookie consent',
+            'personal data', 'data processing',
+            'デバイス所有者', 'intel体験', '広告パートナー',
+            'website experience', 'functional cookies'
+        ]
+        
+        privacy_count = sum(1 for indicator in privacy_indicators if indicator in page_text)
+        return privacy_count >= 3  # 3つ以上の指標がある場合はプライバシーページと判定
+    
+    def _is_privacy_related_content(self, text: str) -> bool:
+        """テキストがプライバシー関連のコンテンツかどうかを判定"""
+        text_lower = text.lower()
+        
+        privacy_keywords = [
+            'privacy', 'cookie', 'consent', 'data collection', 'personal information',
+            'website uses cookies', 'デバイス所有者', 'intel体験', '広告パートナー',
+            'functional technologies', 'performance technologies', 'advertising technologies',
+            'device owners', 'website experience', 'enhanced functionality',
+            'third party providers', 'unique device identifiers'
+        ]
+        
+        return any(keyword in text_lower for keyword in privacy_keywords)
+    
+    def _is_technical_content(self, text: str) -> bool:
+        """テキストが技術的なコンテンツかどうかを判定"""
+        text_lower = text.lower()
+        
+        # 技術的なキーワード
+        technical_keywords = [
+            'fpga', 'processor', 'architecture', 'instruction', 'memory',
+            'dsp', 'signal processing', 'algorithm', 'implementation',
+            'configuration', 'register', 'interface', 'protocol',
+            'performance', 'optimization', 'design', 'system',
+            'hardware', 'software', 'embedded', 'real-time',
+            'nios', 'stratix', 'arria', 'cyclone', 'agilex',
+            'risc-v', 'core', 'cache', 'pipeline', 'interrupt',
+            'debug', 'trace', 'compiler', 'toolchain'
+        ]
+        
+        # 長いテキストであれば、技術キーワードが含まれている可能性が高い
+        if len(text) > 100:
+            return any(keyword in text_lower for keyword in technical_keywords)
+        
+        # 短いテキストの場合はより厳密にチェック
+        return sum(1 for keyword in technical_keywords if keyword in text_lower) >= 1

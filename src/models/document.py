@@ -22,6 +22,7 @@ class Document(BaseModel):
     last_updated: Optional[datetime] = None
     file_type: Optional[str] = None
     abstract: Optional[str] = None  # 論文のアブストラクト
+    content: Optional[str] = None  # ドキュメントの内容（403エラー時のフォールバック含む）
     scraped_at: datetime
     hash: str
     
@@ -39,6 +40,7 @@ class Document(BaseModel):
             "category": self.category,
             "file_type": self.file_type,
             "abstract": self.abstract,
+            "content": self.content,
             "api_metadata": self.api_metadata
         }
 

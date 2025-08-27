@@ -365,16 +365,19 @@ class InfoGatherer:
                 if summary_generation_success:
                     self.logger.info("📧 Email notification sending - Summary is SAFE and verified")
                     # EmailSenderに適切な形式でllm_summaryを渡す
+                    # 実際のllm_summary_infoを使用して処理方式などの情報を保持
+                    try:
+                        with open(output_file, 'r', encoding='utf-8') as f:
+                            saved_data = json.load(f)
+                        actual_llm_info = saved_data.get('llm_summary_info', {})
+                    except Exception as e:
+                        self.logger.warning(f"Failed to load saved data for email: {e}")
+                        actual_llm_info = {}
+                    
                     email_summary = {
                         'processing_status': 'Success',
                         'summary': llm_summary,
-                        'summary_info': {
-                            'timestamp': datetime.now().isoformat(),
-                            'language': llm_result.get('language', 'ja'),
-                            'summary_type': 'true-localllm',
-                            'original_document_count': sum(len(docs) for docs in results.values()),
-                            'original_sources': list(results.keys())
-                        }
+                        'summary_info': actual_llm_info  # 実際のllm_summary_infoを使用
                     }
                     self.email_sender.send_notification(results, output_file, email_summary)
                 else:

@@ -107,14 +107,19 @@ class EmailSender:
             body += "🎯 Mistral Academic AI要約レポート\n"
             body += "-" * 50 + "\n"
             
-            # 要約の基本情報
-            summary_info = llm_summary.get('summary_info', {})
+            # llm_summary_info structure fix - data passed directly, not nested under summary_info
+            summary_info = llm_summary.get('summary_info', llm_summary)  # fallback to llm_summary itself
             if summary_info:
                 body += f"📅 生成日時: {summary_info.get('timestamp', '不明')}\n"
                 body += f"🌐 言語: {summary_info.get('language', '不明')}\n"
                 body += f"🤖 処理方式: {summary_info.get('processing_method', '不明')}\n"
-                body += f"📊 元文書数: {summary_info.get('original_document_count', 0)}件\n"
-                body += f"🔍 対象ソース: {', '.join(summary_info.get('original_sources', []))}\n"
+                
+                # Handle different data structure formats
+                doc_count = summary_info.get('original_document_count') or summary_info.get('paper_count', 0)
+                sources = summary_info.get('original_sources') or []
+                
+                body += f"📊 元文書数: {doc_count}件\n"
+                body += f"🔍 対象ソース: {', '.join(sources) if sources else '不明'}\n"
                 
                 # モデル情報
                 model_info = summary_info.get('model_info', {})
@@ -145,7 +150,7 @@ class EmailSender:
                         body += "📚 個別論文日本語要約 (Mistral Academic生成)\n"
                         body += "=" * 50 + "\n\n"
                         
-                        for i, summary in enumerate(summaries[:5]):  # 最初の5件のみ表示
+                        for i, summary in enumerate(summaries):  # 全件表示（制限なし）
                             body += f"📝 論文 {summary.get('paper_index', i+1)}: \n"
                             title = summary.get('title', 'タイトル不明')
                             
@@ -168,9 +173,7 @@ class EmailSender:
                             body += japanese_summary + "\n"
                             body += "-" * 40 + "\n\n"
                         
-                        if len(summaries) > 5:
-                            body += f"※ 全{len(summaries)}件中、最初の5件を表示\n"
-                            body += "完全版は添付のJSONファイルをご確認ください。\n\n"
+                        # 全件表示完了
                 
                 except Exception as e:
                     self.logger.warning(f"Failed to load individual summaries: {e}")
